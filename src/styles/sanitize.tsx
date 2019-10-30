@@ -1,305 +1,310 @@
+import React from 'react';
+
 //
 // NOTE: Importing sanitize.css using styled-jsx has been proven
 // impossible. Therefore, I'm just copying the contents.
 // It shouldn't be an issue because this library barely changes.
 // All the code copied from sanitize.css belongs to version 8.0.0.
 //
-export const sanitize = `
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
+export const Sanitize = () => (
+  <style jsx global>{`
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+    }
 
-::before,
-::after {
-  text-decoration: inherit;
-  vertical-align: inherit;
-}
+    ::before,
+    ::after {
+      text-decoration: inherit;
+      vertical-align: inherit;
+    }
 
-html {
-  cursor: default;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  -webkit-tap-highight-color: transparent ;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  word-break: break-word;
-}
+    html {
+      cursor: default;
+      line-height: 1.5;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      -webkit-tap-highight-color: transparent;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      word-break: break-word;
+    }
 
-body {
-  margin: 0;
-}
+    body {
+      margin: 0;
+    }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
+    h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
 
-dl dl,
-dl ol,
-dl ul,
-ol dl,
-ul dl {
-  margin: 0;
-}
+    dl dl,
+    dl ol,
+    dl ul,
+    ol dl,
+    ul dl {
+      margin: 0;
+    }
 
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin: 0;
-}
+    ol ol,
+    ol ul,
+    ul ol,
+    ul ul {
+      margin: 0;
+    }
 
-hr {
-  height: 0;
-  overflow: visible;
-}
+    hr {
+      height: 0;
+      overflow: visible;
+    }
 
-main {
-  display: block;
-}
+    main {
+      display: block;
+    }
 
-nav ol,
-nav ul {
-  list-style: none;
-  padding: 0;
-}
+    nav ol,
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
 
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
+    pre {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
 
-a {
-  background-color: transparent;
-}
+    a {
+      background-color: transparent;
+    }
 
-abbr[title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
+    abbr[title] {
+      text-decoration: underline;
+      text-decoration: underline dotted;
+    }
 
-b,
-strong {
-  font-weight: bolder;
-}
+    b,
+    strong {
+      font-weight: bolder;
+    }
 
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
+    code,
+    kbd,
+    samp {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
 
-small {
-  font-size: 80%;
-}
+    small {
+      font-size: 80%;
+    }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
+    audio,
+    canvas,
+    iframe,
+    img,
+    svg,
+    video {
+      vertical-align: middle;
+    }
 
-audio,
-video {
-  display: inline-block;
-}
+    audio,
+    video {
+      display: inline-block;
+    }
 
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
 
-iframe {
-  border-style: none;
-}
+    iframe {
+      border-style: none;
+    }
 
-img {
-  border-style: none;
-}
+    img {
+      border-style: none;
+    }
 
-svg:not([fill]) {
-  fill: currentColor;
-}
+    svg:not([fill]) {
+      fill: currentColor;
+    }
 
-svg:not(:root) {
-  overflow: hidden;
-}
+    svg:not(:root) {
+      overflow: hidden;
+    }
 
-table {
-  border-collapse: collapse;
-}
+    table {
+      border-collapse: collapse;
+    }
 
-button,
-input,
-select {
-  margin: 0;
-}
+    button,
+    input,
+    select {
+      margin: 0;
+    }
 
-button {
-  overflow: visible;
-  text-transform: none;
-}
+    button {
+      overflow: visible;
+      text-transform: none;
+    }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
+    button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'] {
+      -webkit-appearance: button;
+    }
 
-fieldset {
-  border: 1px solid #a0a0a0;
-  padding: 0.35em 0.75em 0.625em;
-}
+    fieldset {
+      border: 1px solid #a0a0a0;
+      padding: 0.35em 0.75em 0.625em;
+    }
 
-input {
-  overflow: visible;
-}
+    input {
+      overflow: visible;
+    }
 
-legend {
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  white-space: normal;
-}
+    legend {
+      color: inherit;
+      display: table;
+      max-width: 100%;
+      white-space: normal;
+    }
 
-progress {
-  display: inline-block;
-  vertical-align: baseline;
-}
+    progress {
+      display: inline-block;
+      vertical-align: baseline;
+    }
 
-select {
-  text-transform: none;
-}
+    select {
+      text-transform: none;
+    }
 
-textarea {
-  margin: 0;
-  overflow: auto;
-  resize: vertical;
-}
+    textarea {
+      margin: 0;
+      overflow: auto;
+      resize: vertical;
+    }
 
-[type="checkbox"],
-[type="radio"] {
-  padding: 0;
-}
+    [type='checkbox'],
+    [type='radio'] {
+      padding: 0;
+    }
 
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
+    [type='search'] {
+      -webkit-appearance: textfield;
+      outline-offset: -2px;
+    }
 
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
 
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
+    ::-webkit-input-placeholder {
+      color: inherit;
+      opacity: 0.54;
+    }
 
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+    }
 
-::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
+    ::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
 
-:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
+    :-moz-focusring {
+      outline: 1px dotted ButtonText;
+    }
 
-:-moz-ui-invalid {
-  box-shadow: none;
-}
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
 
-details {
-  display: block;
-}
+    details {
+      display: block;
+    }
 
-dialog {
-  background-color: white;
-  border: solid;
-  color: black;
-  display: block;
-  height: -moz-fit-content;
-  height: -webkit-fit-content;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
-  position: absolute;
-  right: 0;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-}
+    dialog {
+      background-color: white;
+      border: solid;
+      color: black;
+      display: block;
+      height: -moz-fit-content;
+      height: -webkit-fit-content;
+      height: fit-content;
+      left: 0;
+      margin: auto;
+      padding: 1em;
+      position: absolute;
+      right: 0;
+      width: -moz-fit-content;
+      width: -webkit-fit-content;
+      width: fit-content;
+    }
 
-dialog:not([open]) {
-  display: none;
-}
+    dialog:not([open]) {
+      display: none;
+    }
 
-summary {
-  display: list-item;
-}
+    summary {
+      display: list-item;
+    }
 
-canvas {
-  display: inline-block;
-}
+    canvas {
+      display: inline-block;
+    }
 
-template {
-  display: none;
-}
+    template {
+      display: none;
+    }
 
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea,
-[tabindex] {
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-}
+    a,
+    area,
+    button,
+    input,
+    label,
+    select,
+    summary,
+    textarea,
+    [tabindex] {
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+    }
 
-[hidden] {
-  display: none;
-}
+    [hidden] {
+      display: none;
+    }
 
-[aria-busy="true"] {
-  cursor: progress;
-}
+    [aria-busy='true'] {
+      cursor: progress;
+    }
 
-[aria-controls] {
-  cursor: pointer;
-}
+    [aria-controls] {
+      cursor: pointer;
+    }
 
-[aria-disabled="true"],
-[disabled] {
-  cursor: not-allowed;
-}
+    [aria-disabled='true'],
+    [disabled] {
+      cursor: not-allowed;
+    }
 
-[aria-hidden="false"][hidden] {
-  display: initial;
-}
+    [aria-hidden='false'][hidden] {
+      display: initial;
+    }
 
-[aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
-}`;
+    [aria-hidden='false'][hidden]:not(:focus) {
+      clip: rect(0, 0, 0, 0);
+      position: absolute;
+    }
+  `}</style>
+);
