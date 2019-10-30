@@ -15,6 +15,7 @@ addParameters({
   },
 });
 
+// Add global styles
 addDecorator(story => (
   <>
     <Sanitize />
