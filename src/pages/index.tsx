@@ -1,5 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+import { Sanitize } from '../styles/sanitize';
+import { SanitizeForms } from '../styles/sanitize-forms';
+import { SanitizeTypography } from '../styles/sanitize-typography';
+import { Global } from '../styles/global';
 import { Section } from '../components/section';
 
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
@@ -10,6 +14,10 @@ type IndexProps = {
 
 export const Index = ({ title, sectionDatas }: IndexProps) => (
   <div>
+    <Sanitize />
+    <SanitizeForms />
+    <SanitizeTypography />
+    <Global />
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
