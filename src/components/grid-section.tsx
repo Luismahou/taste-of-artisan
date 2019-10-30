@@ -9,5 +9,14 @@ type GridSectionProps = {
 };
 
 export const GridSection = ({ sectionData }: GridSectionProps) => {
-  return <div>grid section</div>;
+  return (
+    <div>
+      grid section
+      <style jsx>{`
+        div {
+          color: red;
+        }
+      `}</style>
+    </div>
+  );
 };
