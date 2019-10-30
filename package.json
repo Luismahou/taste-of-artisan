@@ -8,7 +8,8 @@
     "start": "next start",
     "deploy": "now",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prettier": "node_modules/.bin/prettier src/**/*.tsx --write"
   },
   "husky": {
     "hooks": {
@@ -26,7 +27,8 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-angular": "^8.2.0",
     "@storybook/addon-actions": "^5.2.5",
-    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addon-knobs": "^5.2.5",
+    "@storybook/addon-viewport": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
     "@types/node": "^12.11.5",
