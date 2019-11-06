@@ -5,6 +5,7 @@ import { SanitizeForms } from '../styles/sanitize-forms';
 import { SanitizeTypography } from '../styles/sanitize-typography';
 import { Global } from '../styles/global';
 import { Section } from '../components/section';
+import '../styles/index.css';
 
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
 type IndexProps = {
