@@ -5,6 +5,7 @@ import { Sanitize } from '../src/styles/sanitize';
 import { SanitizeForms } from '../src/styles/sanitize-forms';
 import { SanitizeTypography } from '../src/styles/sanitize-typography';
 import { Global } from '../src/styles/global';
+import '../src/styles/index.css';
 
 const { iphone5, ipad } = INITIAL_VIEWPORTS;
 
