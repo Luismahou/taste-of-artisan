@@ -12,6 +12,9 @@ module.exports = {
       black: '#000',
       white: '#fff',
 
+      'muddy-waters': '#b4855d',
+      'baltic-sea': '#3f2d31',
+
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -382,7 +385,7 @@ module.exports = {
     stroke: ['responsive'],
     // tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus'],
+    textColor: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
     userSelect: ['responsive'],

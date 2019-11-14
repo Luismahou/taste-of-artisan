@@ -1,29 +1,24 @@
 import React from 'react';
 import Head from 'next/head';
-import { Sanitize } from '../styles/sanitize';
-import { SanitizeForms } from '../styles/sanitize-forms';
-import { SanitizeTypography } from '../styles/sanitize-typography';
-import { Global } from '../styles/global';
+import { Header } from '../components/header/header';
 import { Section } from '../components/section';
 import '../styles/index.css';
 
+type MenuItemsData = React.ComponentProps<typeof Header>['menuItems'];
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
 type IndexProps = {
   title: string;
+  menuItems: MenuItemsData;
   sectionDatas: readonly SectionData[];
 };
 
-export const Index = ({ title, sectionDatas }: IndexProps) => (
+export const Index = ({ title, menuItems, sectionDatas }: IndexProps) => (
   <div>
-    <Sanitize />
-    <SanitizeForms />
-    <SanitizeTypography />
-    <Global />
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <header>Header</header>
+    <Header menuItems={menuItems} />
     <div>
       {sectionDatas.map(sectionData => (
         <Section sectionData={sectionData} />
@@ -35,6 +30,20 @@ export const Index = ({ title, sectionDatas }: IndexProps) => (
 
 Index.getInitialProps = () => ({
   title: 'Taste of Artisan',
+  menuItems: [
+    {
+      label: 'Menu item one',
+      slug: '/',
+    },
+    {
+      label: 'Meet the butcher',
+      slug: '/two',
+    },
+    {
+      label: 'About us',
+      slug: '/three',
+    },
+  ],
   sectionDatas: [
     {
       kind: 'hero',

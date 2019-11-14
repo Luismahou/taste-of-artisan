@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "deploy": "now",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -s ./public -p 6006 --quiet",
+    "build-storybook": "build-storybook -s ./public",
     "prettier": "node_modules/.bin/prettier src/**/*.tsx --write"
   },
   "husky": {
@@ -20,7 +20,8 @@
   "dependencies": {
     "next": "9.1.2",
     "react": "16.11.0",
-    "react-dom": "16.11.0"
+    "react-dom": "16.11.0",
+    "react-use": "13.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
