@@ -15,7 +15,7 @@ export const MenuLink = ({ label, href, theme }: MenuLinkProps) => {
     <Link href={href}>
       <a
         className={`
-    relative text-base font-medium py-2 uppercase cursor-pointer
+    relative text-lg font-medium py-2 uppercase cursor-pointer
     ${
       theme === 'light'
         ? ''

@@ -30,7 +30,7 @@ export const Backdrop = ({ onClick }: BackdropProps) => (
 
 type MenuItemData = {
   label: string;
-  slug: string;
+  href: string;
 };
 type HeaderProps = {
   menuItems: readonly MenuItemData[];
@@ -49,6 +49,16 @@ export const Header = ({ menuItems }: HeaderProps) => {
         ${y > 0 ? 'sm:header-not-translated' : 'sm:header-translated'}
       `}
     >
+      <div
+        className={`absolute inset-0 bg-white transition-transform-quick ${
+          y === 0 ? 'sm:header-bg-scaled' : 'scale-1'
+        }`}
+      />
+      <div
+        className={`absolute inset-0 shadow transition-opacity-quick ${
+          y === 0 ? 'opacity-0' : 'opacity-100'
+        }`}
+      />
       <img
         alt="Logo"
         src="/logo.png"
@@ -60,8 +70,8 @@ export const Header = ({ menuItems }: HeaderProps) => {
         <nav>
           <ul className="flex flex-1">
             {menuItems.map(mi => (
-              <li key={mi.slug} className="uppercase p-3 font-medium">
-                <MenuLink label={mi.label} href={mi.slug} theme="light" />
+              <li key={mi.href} className="uppercase p-3 font-medium">
+                <MenuLink label={mi.label} href={mi.href} theme="light" />
               </li>
             ))}
           </ul>
@@ -78,11 +88,6 @@ export const Header = ({ menuItems }: HeaderProps) => {
           </AnimatePresence>
         </motion.nav>
       </div>
-      <div
-        className={`absolute inset-0 shadow transition-opacity-quick ${
-          y === 0 ? 'opacity-0' : 'opacity-100'
-        }`}
-      />
     </header>
   );
 };

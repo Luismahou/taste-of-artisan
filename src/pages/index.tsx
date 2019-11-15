@@ -33,15 +33,15 @@ Index.getInitialProps = () => ({
   menuItems: [
     {
       label: 'Menu item one',
-      slug: '/',
+      href: '/',
     },
     {
       label: 'Meet the butcher',
-      slug: '/two',
+      href: '/two',
     },
     {
       label: 'About us',
-      slug: '/three',
+      href: '/three',
     },
   ],
   sectionDatas: [

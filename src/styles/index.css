@@ -39,6 +39,10 @@ a {
   transition: transform 0.2s ease-in, opacity 0.2s ease-in;
 }
 
+.scale-1 {
+  transform: scale(1);
+}
+
 .logo-scaled {
   transform: scale(1.2);
 }
@@ -52,6 +56,9 @@ a {
   }
   .sm\:logo-scaled {
     transform: scale(2) translateX(0.75rem);
+  }
+  .sm\:header-bg-scaled {
+    transform: scale(1.3);
   }
 }
 

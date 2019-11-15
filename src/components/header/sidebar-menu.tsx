@@ -20,12 +20,12 @@ const menuItemVariants = {
 };
 
 type MenuItemProps = {
-  slug: string;
+  href: string;
   label: string;
 };
-const MenuItem = ({ slug, label }: MenuItemProps) => (
+const MenuItem = ({ href, label }: MenuItemProps) => (
   <motion.li variants={menuItemVariants} className="p-4 text-center">
-    <MenuLink label={label} href={slug} theme="dark" />
+    <MenuLink label={label} href={href} theme="dark" />
   </motion.li>
 );
 
@@ -58,8 +58,8 @@ export const SidebarMenu = ({ menuItems }: SidebarMenuProps) => (
     className="fixed top-0 bottom-0 right-0 p-5 bg-baltic-sea z-10"
     style={{ paddingTop: 120, maxWidth: 400, width: '80vw' }}
   >
-    {menuItems.map(({ slug, label }) => (
-      <MenuItem key={slug} slug={slug} label={label} />
+    {menuItems.map(mi => (
+      <MenuItem key={mi.href} {...mi} />
     ))}
   </motion.ul>
 );
