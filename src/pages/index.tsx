@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Header } from '../components/header/header';
-import { Section } from '../components/section';
+import { Section } from '../components/sections/section';
 import '../styles/index.css';
 
 type MenuItemsData = React.ComponentProps<typeof Header>['menuItems'];

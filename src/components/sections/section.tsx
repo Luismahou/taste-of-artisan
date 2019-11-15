@@ -1,5 +1,5 @@
 import React from 'react';
-import { UnreachableError } from '../base/unreachable-error';
+import { UnreachableError } from '../../base/unreachable-error';
 import { HeroSection, HeroSectionData } from './hero-section';
 import { GridSection, GridSectionData } from './grid-section';
 
