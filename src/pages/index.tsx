@@ -17,6 +17,10 @@ export const Index = ({ title, menuItems, sectionDatas }: IndexProps) => (
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
+      <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+        rel="stylesheet"
+      />
     </Head>
     <Header menuItems={menuItems} />
     <div>
@@ -47,10 +51,10 @@ Index.getInitialProps = () => ({
   sectionDatas: [
     {
       kind: 'hero',
-      imgUrl: '',
-      title: 'Hero title',
-      subtitle: 'hero subtitle',
-      ctaText: 'Click',
+      imgUrl:
+        'http://joepapandrea.com.au/wp-content/uploads/cache/2016/03/joepapandrea_fitout/3232271715.jpg',
+      title: 'Taste the difference',
+      subtitle: 'Real food for real people',
     },
     {
       kind: 'grid',

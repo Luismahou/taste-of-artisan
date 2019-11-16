@@ -2,7 +2,7 @@
 
 body,
 a {
-  @apply text-baltic-sea;
+  @apply font-sans text-baltic-sea;
 }
 
 .unstyle-button {
@@ -39,6 +39,10 @@ a {
   transition: transform 0.2s ease-in, opacity 0.2s ease-in;
 }
 
+/*
+ * HEADER
+ */
+
 .scale-1 {
   transform: scale(1);
 }
@@ -59,6 +63,36 @@ a {
   }
   .sm\:header-bg-scaled {
     transform: scale(1.3);
+  }
+}
+
+/*
+ * HERO
+ */
+
+.hero-bg {
+  padding-top: 400px;
+}
+
+.hero-bg-overlay {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@screen sm {
+  .hero-bg {
+    padding-top: 70vh;
+  }
+
+  .hero-bg-overlay {
+    background-image: linear-gradient(
+      50deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 }
 

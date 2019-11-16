@@ -1,11 +1,11 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export type HeroSectionData = {
   kind: 'hero';
   imgUrl: string;
   title: string;
   subtitle: string;
-  ctaText: string;
 };
 
 type HeroSectionProps = {
@@ -13,42 +13,33 @@ type HeroSectionProps = {
 };
 
 export const HeroSection = ({
-  sectionData: { imgUrl, title, subtitle, ctaText },
+  sectionData: { imgUrl, title, subtitle },
 }: HeroSectionProps) => {
   return (
     <section>
-      <div className="bg-img">
-        <h1>{title}</h1>
+      <div
+        className="relative bg-center bg-cover w-full hero-bg"
+        style={{ backgroundImage: `url(${imgUrl})` }}
+      >
+        <div className="absolute inset-0 flex justify-center items-center sm:justify-start sm:items-end hero-bg-overlay">
+          <div className="relative sm:p-16">
+            <motion.h1
+              className="text-white text-4xl sm:text-6xl text-center sm:text-left uppercase opacity-0"
+              animate={{ opacity: 1, y: -10 }}
+              transition={{ delay: 1, duration: 1 }}
+            >
+              {title}
+            </motion.h1>
+            <motion.h2
+              className="text-white text-2xl sm:text-4xl text-center sm:text-left opacity-0"
+              animate={{ opacity: 1, y: -10 }}
+              transition={{ delay: 1.5, duration: 1 }}
+            >
+              {subtitle}
+            </motion.h2>
+          </div>
+        </div>
       </div>
-      <style jsx>{`
-        .bg-img {
-          position: relative;
-          background-image: url(${imgUrl});
-          background-size: cover;
-          background-position: center;
-          width: 100%;
-          padding-top: 400px;
-          box-sizing: border-box;
-        }
-
-        h1 {
-          font-size: 30px;
-          position: absolute;
-          left: 10%;
-          bottom: 10%;
-          text-shadow: 1px 1px 4px #444;
-        }
-
-        @media (min-width: 600px) {
-          .bg-img {
-            padding-top: 70vh;
-          }
-
-          h1 {
-            font-size: 40px;
-          }
-        }
-      `}</style>
     </section>
   );
 };
