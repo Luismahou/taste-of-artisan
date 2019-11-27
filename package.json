@@ -9,7 +9,8 @@
     "deploy": "now",
     "storybook": "start-storybook -s ./public -p 6006 --quiet",
     "build-storybook": "build-storybook -s ./public",
-    "prettier": "node_modules/.bin/prettier src/**/*.tsx --write"
+    "prettier": "prettier src/**/*.tsx --write",
+    "tsc:watch": "tsc --watch"
   },
   "husky": {
     "hooks": {
