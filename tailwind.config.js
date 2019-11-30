@@ -13,7 +13,7 @@ module.exports = {
       white: '#fff',
 
       'muddy-waters': '#b4855d',
-      'baltic-sea': '#3f2d31',
+      'baltic-sea': '#302c31',
 
       gray: {
         100: '#f7fafc',
@@ -108,15 +108,9 @@ module.exports = {
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
       none: 'none',
     },
-    container: {},
-    cursor: {
-      auto: 'auto',
-      default: 'default',
-      pointer: 'pointer',
-      wait: 'wait',
-      text: 'text',
-      move: 'move',
-      'not-allowed': 'not-allowed',
+    container: {
+      center: true,
+      padding: '2rem',
     },
     fill: {
       current: 'currentColor',
@@ -398,6 +392,7 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {
+    container: false,
     float: false,
     objectFit: false,
     objectPosition: false,

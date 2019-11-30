@@ -42,9 +42,8 @@ export const Header = ({ menuItems }: HeaderProps) => {
   return (
     <header
       className={`
-        sticky top-0 flex
-        justify-between items-center
-        px-4 py-2 sm:py-4
+        sticky top-0
+        py-2 sm:py-4
         bg-white z-10 transition-transform-quick
         ${y > 0 ? 'sm:header-not-translated' : 'sm:header-translated'}
       `}
@@ -59,34 +58,36 @@ export const Header = ({ menuItems }: HeaderProps) => {
           y === 0 ? 'opacity-0' : 'opacity-100'
         }`}
       />
-      <img
-        alt="Logo"
-        src="/logo.png"
-        className={`w-16 logo-scaled transition-transform-quick ${
-          y === 0 ? 'sm:logo-scaled' : ''
-        }`}
-      />
-      <div className="hidden sm:block">
-        <nav>
-          <ul className="flex flex-1">
-            {menuItems.map(mi => (
-              <li key={mi.href} className="uppercase p-3 font-medium">
-                <MenuLink label={mi.label} href={mi.href} theme="light" />
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-      <div className="block sm:hidden">
-        <motion.nav initial={false} animate={open ? 'open' : 'closed'}>
-          <HamburgerButton onClick={toggleOpen} />
-          <AnimatePresence>
-            {open && <Backdrop onClick={toggleOpen} />}
-          </AnimatePresence>
-          <AnimatePresence>
-            {open && <SidebarMenu menuItems={menuItems} />}
-          </AnimatePresence>
-        </motion.nav>
+      <div className="container flex justify-between items-center">
+        <img
+          alt="Logo"
+          src="/logo.png"
+          className={`w-16 logo-scaled transition-transform-quick ${
+            y === 0 ? 'sm:logo-scaled' : ''
+          }`}
+        />
+        <div className="hidden sm:block">
+          <nav>
+            <ul className="flex flex-1">
+              {menuItems.map(mi => (
+                <li key={mi.href} className="uppercase p-3 font-medium">
+                  <MenuLink label={mi.label} href={mi.href} theme="light" />
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <div className="block sm:hidden">
+          <motion.nav initial={false} animate={open ? 'open' : 'closed'}>
+            <HamburgerButton onClick={toggleOpen} />
+            <AnimatePresence>
+              {open && <Backdrop onClick={toggleOpen} />}
+            </AnimatePresence>
+            <AnimatePresence>
+              {open && <SidebarMenu menuItems={menuItems} />}
+            </AnimatePresence>
+          </motion.nav>
+        </div>
       </div>
     </header>
   );

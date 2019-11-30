@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Header } from '../components/header/header';
+import { Footer } from '../components/footer/footer';
 import { Section } from '../components/sections/section';
 import '../styles/index.css';
 
@@ -10,9 +11,18 @@ type IndexProps = {
   title: string;
   menuItems: MenuItemsData;
   sectionDatas: readonly SectionData[];
+  footer: {
+    firstColumnData: React.ComponentProps<typeof Footer>['firstColumnData'];
+    secondColumnData: React.ComponentProps<typeof Footer>['secondColumnData'];
+  };
 };
 
-export const Index = ({ title, menuItems, sectionDatas }: IndexProps) => (
+export const Index = ({
+  title,
+  menuItems,
+  sectionDatas,
+  footer,
+}: IndexProps) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -28,7 +38,7 @@ export const Index = ({ title, menuItems, sectionDatas }: IndexProps) => (
         <Section sectionData={sectionData} />
       ))}
     </div>
-    <footer>Footer</footer>
+    <Footer {...footer} />
   </div>
 );
 
@@ -60,4 +70,27 @@ Index.getInitialProps = () => ({
       kind: 'grid',
     },
   ],
+  footer: {
+    firstColumnData: {
+      title: 'Taste of Artisan',
+      links: [
+        {
+          label: 'How do we source our meat',
+          href: '/how-do-we-source-our-meat',
+        },
+        { label: 'Meet the butcher', href: '/meet-the-buther' },
+        { label: 'Free delivery', href: '/free-delivery' },
+      ],
+    },
+    secondColumnData: {
+      title: 'Blog',
+      links: [
+        {
+          label: 'How to make chorizos at home',
+          href: '/blog/how-to-make-chorizos',
+        },
+        { label: 'Making salami at home', href: '/blog/making-salami-at-home' },
+      ],
+    },
+  },
 });
