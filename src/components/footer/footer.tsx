@@ -38,7 +38,7 @@ const FooterColumn = ({ columnPosition, title, links }: FooterColumnProps) => (
 export const Footer = ({ firstColumnData, secondColumnData }: FooterProps) => {
   return (
     <footer className="bg-baltic-sea text-white py-8">
-      <div className="container footer">
+      <div className="container footer text-center sm:text-left">
         <FooterColumn columnPosition="first" {...firstColumnData} />
         <FooterColumn columnPosition="second" {...secondColumnData} />
         <div className="footer-logo">
