@@ -10,7 +10,8 @@
     "storybook": "start-storybook -s ./public -p 6006 --quiet",
     "build-storybook": "build-storybook -s ./public",
     "prettier": "prettier src/**/*.tsx --write",
-    "tsc:watch": "tsc --watch"
+    "tsc:watch": "tsc --watch",
+    "imagemin": "node optimize-images.js"
   },
   "husky": {
     "hooks": {
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "framer-motion": "^1.6.17",
+    "lodash": "^4.17.15",
     "next": "9.1.4",
     "react": "16.12.0",
     "react-dom": "16.12.0",
@@ -34,11 +36,15 @@
     "@storybook/addon-viewport": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
+    "@types/lodash": "^4.14.149",
     "@types/node": "^12.12.14",
     "@types/react": "^16.9.13",
     "@zeit/next-css": "^1.0.1",
     "babel-loader": "^8.0.6",
     "husky": "^3.1.0",
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",

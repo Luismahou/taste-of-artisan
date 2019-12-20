@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import repeat from 'lodash/repeat';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useWindowScroll } from 'react-use';
+import { resolveImage } from '../../base/image-resolver';
 import { HamburgerButton } from './hamburger-button';
 import { SidebarMenu } from './sidebar-menu';
 import { MenuLink } from './menu-link';
@@ -61,16 +63,21 @@ export const Header = ({ menuItems }: HeaderProps) => {
       <div className="container flex justify-between items-center">
         <img
           alt="Logo"
-          src="/logo.png"
+          src={resolveImage('logo.png')}
           className={`w-16 logo-scaled transition-transform-quick ${
             y === 0 ? 'sm:logo-scaled' : ''
           }`}
         />
         <div className="hidden sm:block">
           <nav>
-            <ul className="flex flex-1">
+            <ul
+              className="sm:header-menu flex-1"
+              style={{
+                gridTemplateColumns: createAutoColumns(menuItems.length),
+              }}
+            >
               {menuItems.map(mi => (
-                <li key={mi.href} className="uppercase p-3 font-medium">
+                <li key={mi.href} className="uppercase py-3 font-medium">
                   <MenuLink label={mi.label} href={mi.href} theme="light" />
                 </li>
               ))}
@@ -92,3 +99,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
     </header>
   );
 };
+
+function createAutoColumns(length: number) {
+  return repeat('auto ', length).trim();
+}

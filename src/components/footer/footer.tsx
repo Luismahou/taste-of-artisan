@@ -1,4 +1,5 @@
 import React from 'react';
+import { resolveImage } from '../../base/image-resolver';
 import { MenuLink } from './menu-link';
 
 type FooterLink = {
@@ -41,7 +42,11 @@ export const Footer = ({ firstColumnData, secondColumnData }: FooterProps) => {
         <FooterColumn columnPosition="first" {...firstColumnData} />
         <FooterColumn columnPosition="second" {...secondColumnData} />
         <div className="footer-logo">
-          <img alt="Logo" src="/logo-dark.png" className="" />
+          <img
+            alt="Logo"
+            src={resolveImage('logo-dark.png')}
+            className="mx-auto"
+          />
           <p className="text-center">
             &copy; Copyright {new Date().getFullYear()}, Taste of Artisan.
           </p>
