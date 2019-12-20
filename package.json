@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run imagemin && next build",
     "start": "next start",
     "deploy": "now",
     "storybook": "start-storybook -s ./public -p 6006 --quiet",
