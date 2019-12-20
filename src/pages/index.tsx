@@ -28,7 +28,7 @@ export const Index = ({
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
       <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+        href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
         rel="stylesheet"
       />
     </Head>
