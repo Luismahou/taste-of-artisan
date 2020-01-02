@@ -51,6 +51,28 @@ a {
 }
 
 /*
+ * BG-IMG
+ */
+
+.bg-img-overlay {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@screen sm {
+  .bg-img-overlay {
+    background-image: linear-gradient(
+      50deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
+
+/*
  * HEADER
  */
 
@@ -88,25 +110,9 @@ a {
   padding-top: 400px;
 }
 
-.hero-bg-overlay {
-  background-image: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
 @screen sm {
   .hero-bg {
     padding-top: 70vh;
-  }
-
-  .hero-bg-overlay {
-    background-image: linear-gradient(
-      50deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
   }
 }
 

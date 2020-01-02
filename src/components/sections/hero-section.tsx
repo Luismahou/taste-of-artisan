@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { BgImg } from '../base/bg-img';
 
 export type HeroSectionData = {
   kind: 'hero';
@@ -17,11 +18,9 @@ export const HeroSection = ({
 }: HeroSectionProps) => {
   return (
     <section>
-      <div
-        className="relative bg-center bg-cover w-full hero-bg"
-        style={{ backgroundImage: `url(${imgUrl})` }}
-      >
-        <div className="absolute inset-0 flex justify-center items-center sm:justify-start sm:items-end hero-bg-overlay">
+      <div className="relative bg-center bg-cover w-full hero-bg">
+        <BgImg imgUrl={imgUrl} />
+        <div className="absolute inset-0 flex justify-center items-center sm:justify-start sm:items-end">
           <div className="relative sm:p-16">
             <motion.h1
               className="text-white text-4xl sm:text-6xl text-center sm:text-left uppercase opacity-0"
