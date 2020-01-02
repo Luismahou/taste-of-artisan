@@ -18,7 +18,7 @@ export const HeroSection = ({
 }: HeroSectionProps) => {
   return (
     <section>
-      <div className="relative bg-center bg-cover w-full hero-bg">
+      <div className="relative w-full hero-bg">
         <BgImg imgUrl={imgUrl} />
         <div className="absolute inset-0 flex justify-center items-center sm:justify-start sm:items-end">
           <div className="container relative">
