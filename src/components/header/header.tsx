@@ -41,23 +41,24 @@ export const Header = ({ menuItems }: HeaderProps) => {
   const { y } = useWindowScroll();
   const [open, setOpen] = useState(false);
   const toggleOpen = () => setOpen(open => !open);
+  const atTop = y === 0;
   return (
     <header
       className={`
         sticky top-0
         py-2 sm:py-4
         bg-white z-10 transition-transform-quick
-        ${y > 0 ? 'sm:header-not-translated' : 'sm:header-translated'}
+        ${atTop ? 'sm:header-translated' : 'sm:header-not-translated'}
       `}
     >
       <div
         className={`absolute inset-0 bg-white transition-transform-quick ${
-          y === 0 ? 'sm:header-bg-scaled' : 'scale-1'
+          atTop ? 'sm:header-bg-scaled' : 'scale-1'
         }`}
       />
       <div
         className={`absolute inset-0 shadow transition-opacity-quick ${
-          y === 0 ? 'opacity-0' : 'opacity-100'
+          atTop ? 'opacity-0' : 'opacity-100'
         }`}
       />
       <div className="container flex justify-between items-center">
@@ -65,7 +66,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
           alt="Logo"
           src={resolveImage('logo.png')}
           className={`w-16 logo-scaled transition-transform-quick ${
-            y === 0 ? 'sm:logo-scaled' : ''
+            atTop ? 'sm:logo-scaled' : ''
           }`}
         />
         <div className="hidden sm:block">
