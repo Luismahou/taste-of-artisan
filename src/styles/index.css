@@ -153,5 +153,14 @@ a {
   }
 }
 
+/*
+ * TITLE
+ */
+
+.title {
+  display: grid;
+  grid-gap: 1rem;
+}
+
 @tailwind utilities;
 @tailwind components;

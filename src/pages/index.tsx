@@ -35,7 +35,10 @@ export const Index = ({
     <Header menuItems={menuItems} />
     <div>
       {sectionDatas.map((sectionData, index) => (
-        <Section key={`${sectionData.kind}-${index}`} sectionData={sectionData} />
+        <Section
+          key={`${sectionData.kind}-${index}`}
+          sectionData={sectionData}
+        />
       ))}
     </div>
     <Footer {...footer} />
@@ -65,6 +68,12 @@ Index.getInitialProps = () => ({
         'http://joepapandrea.com.au/wp-content/uploads/cache/2016/03/joepapandrea_fitout/3232271715.jpg',
       title: 'Taste the difference',
       subtitle: 'Real food for real people',
+    },
+    {
+      kind: 'title',
+      title: 'Real food with 0 nasties',
+      subtitle:
+        'None of our products contain preservatives and are made fresh daily with the best ingredients',
     },
     {
       kind: 'grid',
