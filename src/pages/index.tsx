@@ -34,8 +34,8 @@ export const Index = ({
     </Head>
     <Header menuItems={menuItems} />
     <div>
-      {sectionDatas.map(sectionData => (
-        <Section sectionData={sectionData} />
+      {sectionDatas.map((sectionData, index) => (
+        <Section key={`${sectionData.kind}-${index}`} sectionData={sectionData} />
       ))}
     </div>
     <Footer {...footer} />
