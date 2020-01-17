@@ -162,5 +162,45 @@ a {
   grid-gap: 1rem;
 }
 
+/*
+ * SIDE BY SIDE
+ */
+
+.side-by-side {
+  display: grid;
+  grid-gap: 2em;
+}
+
+.side-by-side-pair {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'img'
+    'text';
+}
+
+.side-by-side-img {
+  grid-area: img;
+}
+.side-by-side-text {
+  grid-area: text;
+}
+
+@screen sm {
+  .side-by-side {
+    grid-gap: 4em;
+  }
+
+  .side-by-side-pair {
+    grid-gap: 4em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'img text';
+  }
+  .side-by-side-pair.reversed {
+    grid-template-areas: 'text img';
+  }
+}
+
 @tailwind utilities;
 @tailwind components;

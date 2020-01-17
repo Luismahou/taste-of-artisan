@@ -76,7 +76,24 @@ Index.getInitialProps = () => ({
         'None of our products contain preservatives and are made fresh daily with the best ingredients',
     },
     {
-      kind: 'grid',
+      kind: 'side-by-side',
+      cells: [
+        {
+          imgUrl: 'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+          title: 'The welfare of animals is our priority',
+          content: '',
+        },
+        {
+          imgUrl: 'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+          title: 'Ancestors traditions to your palate',
+          content: '',
+        },
+        {
+          imgUrl: 'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+          title: 'Delicious meals for the whole family',
+          content: '',
+        }
+      ]
     },
   ],
   footer: {
