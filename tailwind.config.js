@@ -4,7 +4,7 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
-      sm: '750px',
+      sm: '650px',
     },
     colors: {
       transparent: 'transparent',

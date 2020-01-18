@@ -119,6 +119,7 @@ a {
 @screen sm {
   .hero-bg {
     padding-top: 70vh;
+    min-height: 400px;
   }
 }
 
