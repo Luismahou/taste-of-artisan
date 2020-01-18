@@ -21,7 +21,7 @@ type BackdropProps = {
 };
 export const Backdrop = ({ onClick }: BackdropProps) => (
   <motion.button
-    className="unstyle-button fixed top-0 left-0 h-full w-full bg-baltic-sea"
+    className="fixed top-0 left-0 w-full h-full unstyle-button bg-baltic-sea"
     variants={variants}
     initial="closed"
     animate="open"
@@ -48,7 +48,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
         sticky top-0
         py-2 sm:py-4
         bg-white z-10 transition-transform-quick
-        ${atTop ? 'sm:header-translated' : 'sm:header-not-translated'}
+        ${atTop ? 'sm:header-translated' : 'sm:header-not-translated shadow-lg'}
       `}
     >
       <div
@@ -61,7 +61,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
           atTop ? 'opacity-0' : 'opacity-100'
         }`}
       />
-      <div className="container flex justify-between items-center">
+      <div className="container flex items-center justify-between">
         <img
           alt="Logo"
           src={resolveImage('logo.png')}
@@ -72,13 +72,13 @@ export const Header = ({ menuItems }: HeaderProps) => {
         <div className="hidden sm:block">
           <nav>
             <ul
-              className="sm:header-menu flex-1"
+              className="flex-1 sm:header-menu"
               style={{
                 gridTemplateColumns: createAutoColumns(menuItems.length),
               }}
             >
               {menuItems.map(mi => (
-                <li key={mi.href} className="uppercase py-3 font-medium">
+                <li key={mi.href} className="py-3 font-medium uppercase">
                   <MenuLink label={mi.label} href={mi.href} theme="light" />
                 </li>
               ))}
