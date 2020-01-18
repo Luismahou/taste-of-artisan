@@ -50,6 +50,12 @@ a {
   max-width: 1200px;
 }
 
+@screen sm {
+  .container {
+    padding: 0 4rem;
+  }
+}
+
 /*
  * BG-IMG
  */
