@@ -49,21 +49,19 @@ Index.getInitialProps = () => ({
   title: 'Taste of Artisan',
   menuItems: [
     {
-      label: 'Menu item one',
-      href: '/',
-    },
-    {
-      label: 'Meet the butcher',
-      href: '/two',
+      label: 'Our products',
+      href: '/our-products',
     },
     {
       label: 'About us',
-      href: '/three',
+      href: '/about-us',
     },
   ],
   sectionDatas: [
     {
       kind: 'hero',
+      // imgUrl: 'https://image.shutterstock.com/z/stock-photo-happy-asian-man-is-eating-the-delicious-favorite-sausage-he-cooked-himself-1372880834.jpg',
+      // imgUrl: 'https://image.shutterstock.com/image-photo/handsome-man-eating-tasty-burger-600w-1354479809.jpg',
       imgUrl:
         'http://joepapandrea.com.au/wp-content/uploads/cache/2016/03/joepapandrea_fitout/3232271715.jpg',
       title: 'Taste the difference',
