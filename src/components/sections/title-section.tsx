@@ -12,8 +12,8 @@ export type TitleSectionData = {
 export const TitleSection = ({ title, subtitle }: TitleSectionProps) => {
   return (
     <section className="container py-12 text-center title">
-      <h1 className="text-4xl sm:text-6xl">{title}</h1>
-      <h2 className="text-2xl sm:text-4xl">{subtitle}</h2>
+      <h2 className="text-2xl sm:text-4xl">{title}</h2>
+      <h3 className="text-xl sm:text-2xl">{subtitle}</h3>
     </section>
   );
 };
