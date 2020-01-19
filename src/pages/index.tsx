@@ -83,21 +83,24 @@ Index.getInitialProps = () => ({
       cells: [
         {
           imgUrl:
-            'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+            'https://cdn.pixabay.com/photo/2017/08/03/21/52/cow-2578458_1280.jpg',
           title: 'The welfare of animals is our priority',
-          content: '',
+          content:
+            'Lorem ipsum sed vitae placerat aliquet consequat ut et donec ut consequat et donec lorem vitae aliquet placerat ipsum sed',
         },
         {
           imgUrl:
-            'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+            'https://cdn.pixabay.com/photo/2018/08/20/15/01/traditional-meat-3619115_1280.jpg',
           title: 'Ancestors traditions to your palate',
-          content: '',
+          content:
+            'Lorem ipsum sed vitae placerat aliquet consequat ut et donec ut consequat et donec lorem vitae aliquet placerat ipsum sed',
         },
         {
           imgUrl:
             'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
           title: 'Delicious meals for the whole family',
-          content: '',
+          content:
+            'Lorem ipsum sed vitae placerat aliquet consequat ut et donec ut consequat et donec lorem vitae aliquet placerat ipsum sed',
         },
       ],
     },
