@@ -4,34 +4,31 @@ import { BgImg } from '../base/bg-img';
 
 export type HeroSectionData = {
   kind: 'hero';
+} & HeroSectionProps;
+
+type HeroSectionProps = {
   imgUrl: string;
   title: string;
   subtitle: string;
 };
 
-type HeroSectionProps = {
-  sectionData: HeroSectionData;
-};
-
-export const HeroSection = ({
-  sectionData: { imgUrl, title, subtitle },
-}: HeroSectionProps) => {
+export const HeroSection = ({ imgUrl, title, subtitle }: HeroSectionProps) => {
   return (
     <section>
       <div className="relative w-full hero-bg">
         <BgImg imgUrl={imgUrl} />
-        <div className="absolute inset-0 flex justify-center items-center sm:justify-start sm:items-end">
+        <div className="absolute inset-0 flex items-center justify-center sm:justify-start sm:items-end">
           <div className="container relative">
             <div className="relative sm:pb-16">
               <motion.h1
-                className="text-white text-4xl sm:text-6xl text-center sm:text-left uppercase opacity-0"
+                className="text-4xl text-center text-white uppercase opacity-0 sm:text-6xl sm:text-left"
                 animate={{ opacity: 1, y: -10 }}
                 transition={{ delay: 1, duration: 1 }}
               >
                 {title}
               </motion.h1>
               <motion.h2
-                className="text-white text-2xl sm:text-4xl text-center sm:text-left opacity-0"
+                className="text-2xl text-center text-white opacity-0 sm:text-4xl sm:text-left"
                 animate={{ opacity: 1, y: -10 }}
                 transition={{ delay: 1.5, duration: 1 }}
               >
