@@ -1,4 +1,5 @@
 import React from 'react';
+import { LinkButton } from '../base/link-button';
 
 export type SideBySideSectionData = {
   kind: 'side-by-side';
@@ -9,8 +10,8 @@ type Cell = {
   title: string;
   content: string;
   cta?: {
-    ctaLabel: string;
-    ctaUrl: string;
+    label: string;
+    href: string;
   };
 };
 
@@ -56,5 +57,10 @@ const SideText = ({ title, content, cta }: SideTextProps) => (
   <div className={'side-by-side-text flex flex-col justify-center'}>
     <h2 className="text-2xl font-bold sm:text-3xl">{title}</h2>
     <p className="text-lg sm:text-xl">{content}</p>
+    {cta ? (
+      <div className="pt-4">
+        <LinkButton href={cta.href} text={cta.label} />
+      </div>
+    ) : null}
   </div>
 );

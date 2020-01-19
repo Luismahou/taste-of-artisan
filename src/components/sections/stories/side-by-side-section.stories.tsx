@@ -12,8 +12,8 @@ const cells = [
     title: 'One',
     content: 'Content one',
     cta: {
-      ctaLabel: 'cta',
-      ctaUrl: '',
+      label: 'Learn more',
+      href: '/somewhere',
     },
   },
   {
@@ -22,8 +22,8 @@ const cells = [
     title: 'Two',
     content: 'Content two',
     cta: {
-      ctaLabel: 'cta',
-      ctaUrl: '',
+      label: 'See more here',
+      href: '/somewhere',
     },
   },
   {

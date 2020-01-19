@@ -87,6 +87,10 @@ Index.getInitialProps = () => ({
           title: 'The welfare of animals is our priority',
           content:
             'Lorem ipsum sed vitae placerat aliquet consequat ut et donec ut consequat et donec lorem vitae aliquet placerat ipsum sed',
+          cta: {
+            label: 'Learn more',
+            href: '/blog/animal-welfare',
+          },
         },
         {
           imgUrl:
