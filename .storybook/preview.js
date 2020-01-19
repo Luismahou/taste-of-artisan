@@ -1,4 +1,4 @@
-import { configure, addDecorator, addParameters } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import React from 'react';
 import '../src/styles/index.css';
@@ -14,6 +14,3 @@ addParameters({
 
 // Add global styles
 addDecorator(story => <>{story()}</>);
-
-// automatically import all files ending in *.stories.tsx
-configure(require.context('../src', true, /\.stories\.tsx$/), module);
