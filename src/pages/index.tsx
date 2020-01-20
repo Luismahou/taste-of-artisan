@@ -108,6 +108,12 @@ Index.getInitialProps = () => ({
         },
       ],
     },
+    {
+      kind: 'background-separator',
+      imgUrl:
+        'https://as1.ftcdn.net/jpg/03/12/52/60/500_F_312526077_DQZd03jtcSe16kuCgUOnUj2Fy4nxF82J.jpg',
+      // imgUrl: 'https://media-private.canva.com/MADatiWZ5CU/1/screen_2x.jpg?response-expires=Mon%2C%2020%20Jan%202020%2002%3A03%3A41%20GMT&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200120T000108Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7352&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20200120%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d5a90c6ad7481ba8cb401582787722c80ba393781988572ca04d0afa90838b1a'
+    },
   ],
   footer: {
     firstColumnData: {
