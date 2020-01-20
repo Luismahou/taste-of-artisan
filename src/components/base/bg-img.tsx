@@ -6,25 +6,18 @@ type BgImgProps = {
 
 export const BgImg = ({ imgUrl }: BgImgProps) => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
-  const image = React.useMemo(() => {
+  React.useEffect(() => {
     if (typeof window !== 'undefined') {
       const i = new Image();
       i.src = imgUrl;
       i.onload = () => setImgLoaded(true);
       i.onerror = () => setImgLoaded(true);
-      return i;
+      return () => {
+        i.onload = null;
+        i.onerror = null;
+      };
     }
-    return undefined;
   }, [imgUrl]);
-  React.useEffect(
-    () => () => {
-      if (image) {
-        image.onload = null;
-        image.onerror = null;
-      }
-    },
-    [imgUrl],
-  );
   return (
     <div className="absolute inset-0 w-full h-full bg-baltic-sea">
       <div
