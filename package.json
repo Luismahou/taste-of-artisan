@@ -25,7 +25,8 @@
     "next": "^9.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-use": "^13.20.0"
+    "react-use": "^13.20.0",
+    "showdown": "^1.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -39,6 +40,7 @@
     "@types/lodash": "^4.14.149",
     "@types/node": "^12.12.25",
     "@types/react": "^16.9.17",
+    "@types/showdown": "^1.9.3",
     "@zeit/next-css": "^1.0.1",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.1.0",
@@ -50,6 +52,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
+    "raw-loader": "^4.0.0",
     "tailwindcss": "^1.1.4",
     "typescript": "^3.7.5"
   }
