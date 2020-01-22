@@ -1,0 +1,26 @@
+{
+  "firstColumnData": {
+    "title": "Taste of Artisan",
+    "links": [
+      {
+        "label": "How do we source our meat",
+        "href": "/how-do-we-source-our-meat"
+      },
+      { "label": "Meet the butcher", "href": "/meet-the-buther" },
+      { "label": "Free delivery", "href": "/free-delivery" }
+    ]
+  },
+  "secondColumnData": {
+    "title": "Blog",
+    "links": [
+      {
+        "label": "How to make chorizos at home",
+        "href": "/blog/how-to-make-chorizos"
+      },
+      {
+        "label": "Making salami at home",
+        "href": "/blog/making-salami-at-home"
+      }
+    ]
+  }
+}

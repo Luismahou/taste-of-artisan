@@ -4,6 +4,8 @@ subtitle: Believe me it's easier than it seems
 publishedData: 02/01/2020
 ---
 
+![alt text](https://cdn.pixabay.com/photo/2017/05/15/11/54/chorizo-2314640_1280.jpg 'Chorizos on a chopping board')
+
 Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.
 
 Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.

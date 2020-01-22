@@ -1,0 +1,12 @@
+{
+  "menuItems": [
+    {
+      "label": "Our products",
+      "href": "/our-products"
+    },
+    {
+      "label": "About us",
+      "href": "/about-us"
+    }
+  ]
+}

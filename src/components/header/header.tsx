@@ -62,13 +62,15 @@ export const Header = ({ menuItems }: HeaderProps) => {
         }`}
       />
       <div className="container flex items-center justify-between">
-        <img
-          alt="Logo"
-          src={resolveImage('logo.png')}
-          className={`w-16 logo-scaled transition-transform-quick ${
-            atTop ? 'sm:logo-scaled' : ''
-          }`}
-        />
+        <a href="/">
+          <img
+            alt="Logo"
+            src={resolveImage('logo.png')}
+            className={`w-16 logo-scaled transition-transform-quick ${
+              atTop ? 'sm:logo-scaled' : ''
+            }`}
+          />
+        </a>
         <div className="hidden sm:block">
           <nav>
             <ul
