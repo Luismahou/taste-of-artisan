@@ -23,3 +23,5 @@ fields:
   config:
     min: '2'
     max: '3'
+pages:
+- data/header.json
