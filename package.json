@@ -11,7 +11,8 @@
     "build-storybook": "build-storybook -s ./public",
     "prettier": "prettier src/**/*.tsx --write",
     "tsc:watch": "tsc --watch",
-    "imagemin": "node optimize-images.js"
+    "imagemin": "node optimize-images.js",
+    "forestry:preview": "next -p 8080 -H 0.0.0.0"
   },
   "husky": {
     "hooks": {
