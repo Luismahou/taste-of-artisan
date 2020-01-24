@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import { Head } from '../components/head/head';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
 import { Section } from '../components/sections/section';
@@ -23,19 +23,7 @@ type IndexProps = {
 
 export const Index = ({ global, header, sectionDatas, footer }: IndexProps) => (
   <div>
-    <Head>
-      <title>{global.title}</title>
-      <link rel="icon" href="/favicon.ico" />
-      {/*
-       * Preconnects to where font assets really are. It saves some precious
-       * time with low speed connections.
-       */}
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="" />
-      <link
-        href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
-        rel="stylesheet"
-      />
-    </Head>
+    <Head title={global.title} />
     <Header menuItems={header.menuItems} />
     <div>
       {sectionDatas.map((sectionData, index) => (
