@@ -1,0 +1,14 @@
+---
+label: Header
+hide_body: true
+fields:
+- type: field_group_list
+  name: menuItems
+  label: menuItems
+  fields:
+  - type: text
+    name: label
+    label: label
+  - type: text
+    name: href
+    label: href
