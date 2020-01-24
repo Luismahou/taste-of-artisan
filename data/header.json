@@ -1,6 +1,10 @@
 {
   "menuItems": [
     {
+      "label": "Free delivery",
+      "href": "/free-delivery"
+    },
+    {
       "label": "Our products",
       "href": "/our-products"
     },
