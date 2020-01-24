@@ -5,8 +5,12 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: data/header.json
+  label: Header
+  match: "**/*"
+- type: document
   path: data/footer.json
-  label: Test document
+  label: Footer
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
