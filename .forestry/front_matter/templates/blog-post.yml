@@ -1,4 +1,36 @@
 ---
 label: Blog post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: The title will appear at the beginning of the post
+- name: sub_title
+  type: text
+  config:
+    required: false
+  label: Sub title
+  description: A small description that will be placed below the title
+- name: published_date
+  type: datetime
+  label: Published date
+  description: The date you wrote the article
+  config:
+    required: true
+    date_format: DD/MM/YYYY
+    time_format: 
+    display_utc: false
+  default: now
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Content
+  description: Post content
