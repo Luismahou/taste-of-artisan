@@ -1,7 +1,7 @@
 ---
 title: How to make chorizos
 subtitle: Believe me it's easier than it seems
-publishedData: 02/01/2020
+publishedDate: 2010-01-01T09:00:00Z
 ---
 
 ![alt text](https://cdn.pixabay.com/photo/2017/05/15/11/54/chorizo-2314640_1280.jpg 'Chorizos on a chopping board')

@@ -2,6 +2,7 @@ import React from 'react';
 import { Head } from '../components/head/head';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
+import { parseISO, formatDistance } from 'date-fns';
 import '../styles/index.css';
 
 type MenuItemsData = React.ComponentProps<typeof Header>['menuItems'];
@@ -20,7 +21,7 @@ type PostProps = {
   metadata: {
     title: string;
     subtitle: string;
-    publishedData: string;
+    publishedDate: string;
   };
   md: string;
 };
@@ -31,7 +32,11 @@ export const Post = ({ global, header, footer, metadata, md }: PostProps) => {
       <Head title={global.title} />
       <Header menuItems={header.menuItems} />
       <section className="py-8 sm:py-16 blog-container">
-        <div>{JSON.stringify(metadata)}</div>
+        <h1 className="text-2xl sm:text-4xl">{metadata.title}</h1>
+        <h2 className="text-xl sm:text-2xl">{metadata.subtitle}</h2>
+        <span className="text-xs sm:text-sm">
+          Published {metadata.publishedDate}
+        </span>
         <div dangerouslySetInnerHTML={{ __html: md }} />
       </section>
       <Footer {...footer} />
@@ -45,7 +50,7 @@ Post.getInitialProps = async (context: { query: { post_name: string } }) => {
   const footer = (await import('../../content/footer.json')).default;
 
   const postName = context.query.post_name;
-  const md: string = (await import(`../../content/posts/${postName}.md`))
+  const mdContent: string = (await import(`../../content/posts/${postName}.md`))
     .default;
 
   const classMap = {
@@ -66,11 +71,18 @@ Post.getInitialProps = async (context: { query: { post_name: string } }) => {
     headerLevelStart: 5,
     extensions: [...bindings],
   });
+  const md = converter.makeHtml(mdContent);
+  const { publishedDate, ...otherMetadata } = converter.getMetadata();
   return {
     global,
     header,
     footer,
-    md: converter.makeHtml(md),
-    metadata: converter.getMetadata(),
+    md,
+    metadata: {
+      ...otherMetadata,
+      publishedDate: formatDistance(parseISO(publishedDate), new Date(), {
+        addSuffix: true,
+      }),
+    },
   };
 };

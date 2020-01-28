@@ -1,8 +1,8 @@
 ---
+
 title: Making salami at home
 subtitle: Believe me it's easier than it seems
-publishedData: '09/01/2020'
-published_date: 2020-01-24T20:01:31Z
+publishedDate: 2020-01-28T09:00:00Z
 ---![alt text](https://cdn.pixabay.com/photo/2017/01/15/14/48/eat-1981727_1280.jpg 'Salami on a chopping board')
 Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.
 
