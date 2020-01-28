@@ -38,9 +38,9 @@ export const Index = ({ global, header, sectionDatas, footer }: IndexProps) => (
 );
 
 Index.getInitialProps = async () => {
-  const global = (await import('../../data/global.json')).default;
-  const header = (await import('../../data/header.json')).default;
-  const footer = (await import('../../data/footer.json')).default;
+  const global = (await import('../../content/global.json')).default;
+  const header = (await import('../../content/header.json')).default;
+  const footer = (await import('../../content/footer.json')).default;
   return {
     global,
     header,

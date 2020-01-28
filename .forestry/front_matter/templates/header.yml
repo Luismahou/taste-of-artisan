@@ -2,26 +2,26 @@
 label: Header
 hide_body: true
 fields:
-- type: field_group_list
-  name: menuItems
-  label: Menu Items
-  fields:
-  - type: text
-    name: label
-    label: Label
-    description: The text on the link
+  - type: field_group_list
+    name: menuItems
+    label: Menu Items
+    fields:
+      - type: text
+        name: label
+        label: Label
+        description: The text on the link
+        config:
+          required: true
+          max: '20'
+      - type: text
+        name: href
+        label: href
+        description: The url relative to the domain (don't include tasteofartisan.com.au)
+        config:
+          required: true
+    description: This the list of links at the top right corner of the website
     config:
-      required: true
-      max: '20'
-  - type: text
-    name: href
-    label: href
-    description: The url relative to the domain (don't include tasteofartisan.com.au)
-    config:
-      required: true
-  description: This the list of links at the top right corner of the website
-  config:
-    min: '2'
-    max: '3'
+      min: '2'
+      max: '3'
 pages:
-- data/header.json
+  - content/header.json

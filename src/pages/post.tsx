@@ -40,12 +40,13 @@ export const Post = ({ global, header, footer, metadata, md }: PostProps) => {
 };
 
 Post.getInitialProps = async (context: { query: { post_name: string } }) => {
-  const global = (await import('../../data/global.json')).default;
-  const header = (await import('../../data/header.json')).default;
-  const footer = (await import('../../data/footer.json')).default;
+  const global = (await import('../../content/global.json')).default;
+  const header = (await import('../../content/header.json')).default;
+  const footer = (await import('../../content/footer.json')).default;
 
   const postName = context.query.post_name;
-  const md: string = (await import(`../../data/posts/${postName}.md`)).default;
+  const md: string = (await import(`../../content/posts/${postName}.md`))
+    .default;
 
   const classMap = {
     h5: 'text-2xl sm:text-4xl pt-8 sm:pt-12',
