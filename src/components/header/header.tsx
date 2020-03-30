@@ -40,7 +40,7 @@ type HeaderProps = {
 export const Header = ({ menuItems }: HeaderProps) => {
   const { y } = useWindowScroll();
   const [open, setOpen] = useState(false);
-  const toggleOpen = () => setOpen(open => !open);
+  const toggleOpen = () => setOpen((open) => !open);
   const atTop = y === 0;
   return (
     <header
@@ -79,7 +79,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
                 gridTemplateColumns: createAutoColumns(menuItems.length),
               }}
             >
-              {menuItems.map(mi => (
+              {menuItems.map((mi) => (
                 <li key={mi.href} className="py-3 font-medium uppercase">
                   <MenuLink label={mi.label} href={mi.href} theme="light" />
                 </li>

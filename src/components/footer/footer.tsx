@@ -26,7 +26,7 @@ const FooterColumn = ({ columnPosition, title, links }: FooterColumnProps) => (
   >
     <h3 className="pb-2 font-bold opacity-50">{title}</h3>
     <ul>
-      {links.map(link => (
+      {links.map((link) => (
         <li key={link.href} className="py-1">
           <MenuLink {...link} />
         </li>

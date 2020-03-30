@@ -9,7 +9,7 @@
     "deploy": "now",
     "storybook": "start-storybook -s ./public -p 6006 --quiet",
     "build-storybook": "build-storybook -s ./public",
-    "prettier": "prettier src/**/*.tsx --write",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
     "tsc:watch": "tsc --watch",
     "imagemin": "node optimize-images.js",
     "forestry:preview": "npm run imagemin && next -p 8080 -H 0.0.0.0"
@@ -52,7 +52,7 @@
     "imagemin-pngquant": "^8.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "pretty-quick": "^2.0.1",
     "raw-loader": "^4.0.0",
     "tailwindcss": "^1.1.4",

@@ -58,7 +58,7 @@ export const SidebarMenu = ({ menuItems }: SidebarMenuProps) => (
     className="fixed top-0 bottom-0 right-0 p-5 bg-baltic-sea z-10"
     style={{ paddingTop: 120, maxWidth: 400, width: '80vw' }}
   >
-    {menuItems.map(mi => (
+    {menuItems.map((mi) => (
       <MenuItem key={mi.href} {...mi} />
     ))}
   </motion.ul>
