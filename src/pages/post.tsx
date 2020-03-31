@@ -44,14 +44,36 @@ export const Post = ({ global, header, footer, metadata, md }: PostProps) => {
   );
 };
 
-Post.getInitialProps = async (context: { query: { post_name: string } }) => {
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: {
+          post_name: 'how-to-make-chorizos',
+        },
+      },
+      {
+        params: {
+          post_name: 'making-salami-at-home',
+        },
+      },
+    ],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: { post_name: string };
+}) {
   const global = (await import('../../content/global.json')).default;
   const header = (await import('../../content/header.json')).default;
   const footer = (await import('../../content/footer.json')).default;
 
-  const postName = context.query.post_name;
-  const mdContent: string = (await import(`../../content/posts/${postName}.md`))
-    .default;
+  const mdContent: string = (
+    await import(`../../content/posts/${params.post_name}.md`)
+  ).default;
 
   const classMap = {
     h5: 'text-2xl sm:text-4xl pt-8 sm:pt-12',
@@ -73,16 +95,19 @@ Post.getInitialProps = async (context: { query: { post_name: string } }) => {
   });
   const md = converter.makeHtml(mdContent);
   const { publishedDate, ...otherMetadata } = converter.getMetadata();
+
   return {
-    global,
-    header,
-    footer,
-    md,
-    metadata: {
-      ...otherMetadata,
-      publishedDate: formatDistance(parseISO(publishedDate), new Date(), {
-        addSuffix: true,
-      }),
+    props: {
+      global,
+      header,
+      footer,
+      md,
+      metadata: {
+        ...otherMetadata,
+        publishedDate: formatDistance(parseISO(publishedDate), new Date(), {
+          addSuffix: true,
+        }),
+      },
     },
   };
-};
+}

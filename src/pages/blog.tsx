@@ -20,17 +20,19 @@ export const Blog = ({ posts }: BlogProps) => (
   </div>
 );
 
-Blog.getInitialProps = () => {
+export function getStaticProps() {
   return {
-    posts: [
-      {
-        href: '/blog/how-to-make-chorizos',
-        title: 'How to make chorizos',
-      },
-      {
-        href: '/blog/medium-rare-burgers',
-        title: 'Medium rare burgers',
-      },
-    ],
+    props: {
+      posts: [
+        {
+          href: '/blog/how-to-make-chorizos',
+          title: 'How to make chorizos',
+        },
+        {
+          href: '/blog/medium-rare-burgers',
+          title: 'Medium rare burgers',
+        },
+      ],
+    },
   };
-};
+}
