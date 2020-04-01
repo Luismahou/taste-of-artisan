@@ -19,20 +19,3 @@ export const Blog = ({ posts }: BlogProps) => (
     ))}
   </div>
 );
-
-export function getStaticProps() {
-  return {
-    props: {
-      posts: [
-        {
-          href: '/blog/how-to-make-chorizos',
-          title: 'How to make chorizos',
-        },
-        {
-          href: '/blog/medium-rare-burgers',
-          title: 'Medium rare burgers',
-        },
-      ],
-    },
-  };
-}
