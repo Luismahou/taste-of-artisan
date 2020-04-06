@@ -9,13 +9,13 @@ const path = require('path');
   // Clear previous optimized resources if necessary
   if (fs.existsSync('public/optimized')) {
     const currentFilenames = fs.readdirSync('public/optimized');
-    currentFilenames.forEach(filename => {
+    currentFilenames.forEach((filename) => {
       fs.unlinkSync(path.join('public/optimized', filename));
     });
   }
 
   // Optimize images
-  const files = await imagemin(['src/public/*.png'], {
+  const files = await imagemin(['src/public/*.png', 'src/public/*.jpg'], {
     destination: 'public/optimized',
     plugins: [
       imageminJpegtran(),
@@ -27,7 +27,7 @@ const path = require('path');
 
   // Hash images
   const filenameToHash = {};
-  files.forEach(f => {
+  files.forEach((f) => {
     const hash = crypto.createHash('sha256');
     const data = fs.readFileSync(f.destinationPath);
     hash.update(data);

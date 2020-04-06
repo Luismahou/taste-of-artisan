@@ -1,4 +1,5 @@
 import React from 'react';
+import { resolveImage } from '../../base/image-resolver';
 
 export type BackgroundSeparatorSectionData = {
   kind: 'background-separator';
@@ -14,7 +15,7 @@ export const BackgroundSeparatorSection = ({
   <div className="py-8">
     <div
       style={{
-        backgroundImage: `url(${imgUrl})`,
+        backgroundImage: `url(${resolveImage(imgUrl)})`,
         height: '50vw',
         maxHeight: 300,
       }}

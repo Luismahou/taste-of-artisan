@@ -1,5 +1,6 @@
 import React from 'react';
 import { LinkButton } from '../base/link-button';
+import { resolveImage } from '../../base/image-resolver';
 
 export type SideBySideSectionData = {
   kind: 'side-by-side';
@@ -29,7 +30,7 @@ export const SideBySideSection = ({ cells }: SideBySideSectionProps) => {
             key={index}
             className={`side-by-side-pair ${isOdd ? 'reversed' : ''}`}
           >
-            <SideImg imgUrl={imgUrl} />
+            <SideImg imgUrl={resolveImage(imgUrl)} />
             <SideText {...textProps} />
           </div>
         );
@@ -43,9 +44,9 @@ type SideImgProps = {} & Pick<Cell, 'imgUrl'>;
 const SideImg = ({ imgUrl }: SideImgProps) => {
   return (
     <>
-      <svg className="side-by-side-img" viewBox="0 0 1 1" />
+      <svg className="side-by-side-img" viewBox="0 0 1 .75" />
       <div
-        className="bg-cover side-by-side-img"
+        className="bg-center bg-cover side-by-side-img"
         style={{ backgroundImage: `url(${imgUrl})` }}
       />
     </>

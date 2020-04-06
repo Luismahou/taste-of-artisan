@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BgImg } from '../base/bg-img';
+import { resolveImage } from '../../base/image-resolver';
 
 export type HeroSectionData = {
   kind: 'hero';
@@ -16,7 +17,7 @@ export const HeroSection = ({ imgUrl, title, subtitle }: HeroSectionProps) => {
   return (
     <section>
       <div className="relative w-full hero-bg">
-        <BgImg imgUrl={imgUrl} />
+        <BgImg imgUrl={resolveImage(imgUrl)} />
         <div className="absolute inset-0 flex items-center justify-center sm:justify-start sm:items-end">
           <div className="container relative">
             <div className="relative sm:pb-16">
