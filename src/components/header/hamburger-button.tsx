@@ -21,7 +21,8 @@ type HamburgerButtonProps = {
 };
 export const HamburgerButton = ({ onClick }: HamburgerButtonProps) => (
   <button
-    className="unstyle-button relative z-20 w-10 h-10 cursor-pointer rounded-full flex justify-center items-center bg-baltic-sea"
+    className="relative z-20 flex items-center justify-center w-10 h-10 rounded-full cursor-pointer unstyle-button bg-baltic-sea"
+    aria-label="Menu"
     onClick={onClick}
   >
     <svg width="23" height="18" viewBox="0 0 23 18">

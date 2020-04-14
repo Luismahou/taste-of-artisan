@@ -20,10 +20,10 @@ export const FaqsSection = ({ faqs }: FaqsSectionProps) => (
     </h2>
     <ul>
       {faqs.map(({ question, answer }, index) => (
-        <div key={index} className="py-4">
+        <li key={index} className="py-4">
           <p className="pb-2 text-lg sm:text-xl">{question}</p>
-          <p className="text-gray-600 sm:text-lg">{answer}</p>
-        </div>
+          <p className="text-gray-700 sm:text-lg">{answer}</p>
+        </li>
       ))}
     </ul>
   </section>

@@ -1,4 +1,3 @@
-import App from 'next/app';
 import '../src/styles/index.css';
 
 function MyApp({ Component, pageProps }) {
