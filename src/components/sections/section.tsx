@@ -10,13 +10,15 @@ import {
   SideBySideSection,
   SideBySideSectionData,
 } from './side-by-side-section';
+import { FaqsSection, FaqsSectionData } from './faqs-section';
 
 type SectionProps = {
   sectionData:
     | HeroSectionData
     | TitleSectionData
     | SideBySideSectionData
-    | BackgroundSeparatorSectionData;
+    | BackgroundSeparatorSectionData
+    | FaqsSectionData;
 };
 
 export const Section = ({ sectionData }: SectionProps) => {
@@ -29,6 +31,8 @@ export const Section = ({ sectionData }: SectionProps) => {
       return <SideBySideSection {...sectionData} />;
     case 'background-separator':
       return <BackgroundSeparatorSection {...sectionData} />;
+    case 'faqs':
+      return <FaqsSection {...sectionData} />;
     default:
       throw new UnreachableError(sectionData);
   }

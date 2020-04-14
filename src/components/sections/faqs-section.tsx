@@ -5,21 +5,24 @@ type Faq = {
   answer: string;
 };
 
-type FaqSectionProps = {
+type FaqsSectionProps = {
   faqs: readonly Faq[];
 };
 
-export type FaqSectionData = {
-  kind: 'faq';
-} & FaqSectionProps;
+export type FaqsSectionData = {
+  kind: 'faqs';
+} & FaqsSectionProps;
 
-export const FaqsSection = ({ faqs }: FaqSectionProps) => (
-  <section className="container">
+export const FaqsSection = ({ faqs }: FaqsSectionProps) => (
+  <section className="container py-12">
+    <h2 className="text-2xl text-center sm:text-4xl">
+      Frequently Asked Questions
+    </h2>
     <ul>
       {faqs.map(({ question, answer }, index) => (
         <div key={index} className="py-4">
-          <p className="pb-2 text-lg font-bold sm:text-xl">{question}</p>
-          <p className="sm:text-lg">{answer}</p>
+          <p className="pb-2 text-lg sm:text-xl">{question}</p>
+          <p className="text-gray-600 sm:text-lg">{answer}</p>
         </div>
       ))}
     </ul>
