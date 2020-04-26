@@ -23,5 +23,12 @@ fields:
   config:
     min: '2'
     max: '3'
+- name: logo
+  type: file
+  config:
+    maxSize: 250
+  label: Logo
+  hidden: true
+  default: "/content/uploads/logo.png"
 pages:
 - content/header.json
