@@ -26,7 +26,7 @@ fields:
 - name: logo
   type: file
   config:
-    maxSize: 250
+    maxSize: 1
   label: Logo
   hidden: true
   default: "/content/uploads/logo.png"
