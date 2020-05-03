@@ -1,0 +1,38 @@
+---
+label: Footer
+hide_body: true
+fields:
+- type: field_group
+  name: firstColumnData
+  label: firstColumnData
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: field_group_list
+    name: links
+    label: links
+    fields:
+    - type: text
+      name: label
+      label: label
+    - type: text
+      name: href
+      label: href
+- type: field_group
+  name: secondColumnData
+  label: secondColumnData
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: field_group_list
+    name: links
+    label: links
+    fields:
+    - type: text
+      name: label
+      label: label
+    - type: text
+      name: href
+      label: href
