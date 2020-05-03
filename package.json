@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run imagemin && next build",
+    "build": "next build",
     "start": "next start",
     "deploy": "now",
-    "storybook": "start-storybook -s ./public -p 6006 --quiet",
+    "storybook": "start-storybook -s ./uploads -p 6006 --quiet",
     "build-storybook": "build-storybook -s ./public",
     "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
     "tsc:watch": "tsc --watch",
-    "imagemin": "node optimize-images.js",
-    "forestry:preview": "npm run imagemin && next -p 8080 -H 0.0.0.0"
+    "forestry:preview": "next -p 8080 -H 0.0.0.0"
   },
   "husky": {
     "hooks": {
@@ -39,9 +38,11 @@
     "@storybook/addon-viewport": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
+    "@types/imagemin": "^7.0.0",
     "@types/lodash": "^4.14.149",
     "@types/node": "^12.12.32",
     "@types/react": "^16.9.32",
+    "@types/sharp": "^0.24.0",
     "@types/showdown": "^1.9.3",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
@@ -54,6 +55,7 @@
     "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1",
     "raw-loader": "^4.0.0",
+    "sharp": "^0.25.2",
     "tailwindcss": "^1.1.4",
     "typescript": "^3.8.3"
   }

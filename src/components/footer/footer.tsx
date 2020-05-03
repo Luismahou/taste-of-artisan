@@ -1,5 +1,4 @@
 import React from 'react';
-import { resolveImage } from '../../base/image-resolver';
 import { MenuLink } from './menu-link';
 
 type FooterLink = {
@@ -14,6 +13,7 @@ type FooterColumnProps = {
 type FooterProps = {
   firstColumnData: Omit<FooterColumnProps, 'columnPosition'>;
   secondColumnData: Omit<FooterColumnProps, 'columnPosition'>;
+  logoSrc: string;
 };
 
 const FooterColumn = ({ columnPosition, title, links }: FooterColumnProps) => (
@@ -35,18 +35,18 @@ const FooterColumn = ({ columnPosition, title, links }: FooterColumnProps) => (
   </div>
 );
 
-export const Footer = ({ firstColumnData, secondColumnData }: FooterProps) => {
+export const Footer = ({
+  firstColumnData,
+  secondColumnData,
+  logoSrc,
+}: FooterProps) => {
   return (
-    <footer className="bg-baltic-sea text-white py-8">
-      <div className="container footer text-center sm:text-left">
+    <footer className="py-8 text-white bg-baltic-sea">
+      <div className="container text-center footer sm:text-left">
         <FooterColumn columnPosition="first" {...firstColumnData} />
         <FooterColumn columnPosition="second" {...secondColumnData} />
         <div className="footer-logo">
-          <img
-            alt="Logo"
-            src={resolveImage('logo-dark.png')}
-            className="mx-auto"
-          />
+          <img alt="Logo" src={logoSrc} className="mx-auto" />
           <p className="text-center">
             &copy; Copyright {new Date().getFullYear()}, Taste of Artisan.
           </p>

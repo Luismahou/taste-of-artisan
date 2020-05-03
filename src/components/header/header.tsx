@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import repeat from 'lodash/repeat';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useWindowScroll } from 'react-use';
-import { resolveImage } from '../../base/image-resolver';
 import { HamburgerButton } from './hamburger-button';
 import { SidebarMenu } from './sidebar-menu';
 import { MenuLink } from './menu-link';
@@ -36,8 +35,9 @@ type MenuItemData = {
 };
 type HeaderProps = {
   menuItems: readonly MenuItemData[];
+  logoSrc: string;
 };
-export const Header = ({ menuItems }: HeaderProps) => {
+export const Header = ({ menuItems, logoSrc }: HeaderProps) => {
   const { y } = useWindowScroll();
   const [open, setOpen] = useState(false);
   const toggleOpen = () => setOpen((open) => !open);
@@ -65,7 +65,7 @@ export const Header = ({ menuItems }: HeaderProps) => {
         <a href="/">
           <img
             alt="Logo"
-            src={resolveImage('logo.png')}
+            src={logoSrc}
             className={`w-16 logo-scaled transition-transform-quick ${
               atTop ? 'sm:logo-scaled' : ''
             }`}

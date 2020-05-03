@@ -2,19 +2,40 @@ import { Index } from '../src/pages/index';
 import global from '../content/global.json';
 import header from '../content/header.json';
 import footer from '../content/footer.json';
+import { optimizeImage } from '../src/image-optimizer';
 
 export default Index;
 
-export function getStaticProps() {
+export async function getStaticProps() {
+  const { src: defaultLogoSrc } = await optimizeImage(header.logo, {
+    default: { width: 200 },
+  });
+  const {
+    srcset: rolledSausagesSrcset,
+  } = await optimizeImage('/rolled-sausages.jpg', {
+    small: { width: 400 },
+    medium: { width: 800 },
+    large: { width: 1200 },
+  });
+  const { src: defaultDarkLogoSrc } = await optimizeImage(footer.logoSrc, {
+    default: { width: 200 },
+  });
+
   return {
     props: {
       global,
-      header,
-      footer,
+      header: {
+        ...header,
+        logoSrc: defaultLogoSrc,
+      },
+      footer: {
+        ...footer,
+        logoSrc: defaultDarkLogoSrc,
+      },
       sectionDatas: [
         {
           kind: 'hero',
-          imgUrl: 'rolled-sausages.jpg',
+          imgSrcset: rolledSausagesSrcset,
           title: 'Ancient traditions by artisans of taste',
           subtitle: '',
         },

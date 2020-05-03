@@ -18,5 +18,9 @@ const SECOND_COLUMN = {
 };
 
 storiesOf('Footer', module).add('interactive', () => (
-  <Footer firstColumnData={FIRST_COLUMN} secondColumnData={SECOND_COLUMN} />
+  <Footer
+    logoSrc="logo-dark.png"
+    firstColumnData={FIRST_COLUMN}
+    secondColumnData={SECOND_COLUMN}
+  />
 ));

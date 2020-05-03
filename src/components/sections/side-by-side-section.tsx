@@ -1,13 +1,12 @@
 import React from 'react';
 import { LinkButton } from '../base/link-button';
-import { resolveImage } from '../../base/image-resolver';
 
 export type SideBySideSectionData = {
   kind: 'side-by-side';
 } & SideBySideSectionProps;
 
 type Cell = {
-  imgUrl: string;
+  imgSrcset: string;
   title: string;
   content: string;
   cta?: {
@@ -23,14 +22,14 @@ type SideBySideSectionProps = {
 export const SideBySideSection = ({ cells }: SideBySideSectionProps) => {
   return (
     <section className="container py-8 side-by-side">
-      {cells.map(({ imgUrl, ...textProps }, index) => {
+      {cells.map(({ imgSrcset, ...textProps }, index) => {
         const isOdd = index % 2 !== 0;
         return (
           <div
             key={index}
             className={`side-by-side-pair ${isOdd ? 'reversed' : ''}`}
           >
-            <SideImg imgUrl={resolveImage(imgUrl)} />
+            <SideImg imgSrcset={imgSrcset} />
             <SideText {...textProps} />
           </div>
         );
@@ -39,15 +38,15 @@ export const SideBySideSection = ({ cells }: SideBySideSectionProps) => {
   );
 };
 
-type SideImgProps = {} & Pick<Cell, 'imgUrl'>;
+type SideImgProps = {} & Pick<Cell, 'imgSrcset'>;
 
-const SideImg = ({ imgUrl }: SideImgProps) => {
+const SideImg = ({ imgSrcset }: SideImgProps) => {
   return (
     <>
       <svg className="side-by-side-img" viewBox="0 0 1 .75" />
-      <div
-        className="bg-center bg-cover side-by-side-img"
-        style={{ backgroundImage: `url(${imgUrl})` }}
+      <img
+        className="object-cover object-center h-full side-by-side-img"
+        srcSet={imgSrcset}
       />
     </>
   );

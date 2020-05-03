@@ -1,25 +1,21 @@
 import React from 'react';
-import { resolveImage } from '../../base/image-resolver';
 
 export type BackgroundSeparatorSectionData = {
   kind: 'background-separator';
 } & BackgroundSeparatorSectionProps;
 
 type BackgroundSeparatorSectionProps = {
-  imgUrl: string;
+  imgSrcset: string;
 };
 
 export const BackgroundSeparatorSection = ({
-  imgUrl,
+  imgSrcset,
 }: BackgroundSeparatorSectionProps) => (
   <div className="py-8">
-    <div
-      style={{
-        backgroundImage: `url(${resolveImage(imgUrl)})`,
-        height: '50vw',
-        maxHeight: 300,
-      }}
-      className="bg-center bg-cover"
+    <img
+      style={{ height: '50vw', maxHeight: 300 }}
+      className="object-cover object-center"
+      srcSet={imgSrcset}
     />
   </div>
 );

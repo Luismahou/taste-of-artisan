@@ -14,7 +14,7 @@
 
 # production
 /build
-/public/optimized
+/public/uploads
 
 # misc
 .DS_Store

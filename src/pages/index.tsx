@@ -4,26 +4,20 @@ import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
 import { Section } from '../components/sections/section';
 
-type MenuItemsData = React.ComponentProps<typeof Header>['menuItems'];
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
 type IndexProps = {
   global: {
     title: string;
   };
-  header: {
-    menuItems: MenuItemsData;
-  };
+  header: React.ComponentProps<typeof Header>;
   sectionDatas: readonly SectionData[];
-  footer: {
-    firstColumnData: React.ComponentProps<typeof Footer>['firstColumnData'];
-    secondColumnData: React.ComponentProps<typeof Footer>['secondColumnData'];
-  };
+  footer: React.ComponentProps<typeof Footer>;
 };
 
 export const Index = ({ global, header, sectionDatas, footer }: IndexProps) => (
   <div>
     <Head title={global.title} />
-    <Header menuItems={header.menuItems} />
+    <Header {...header} />
     <div>
       {sectionDatas.map((sectionData, index) => (
         <Section

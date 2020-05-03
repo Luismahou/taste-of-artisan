@@ -7,8 +7,7 @@ export default {
 
 const cells = [
   {
-    imgUrl:
-      'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+    imgSrcset: 'copertina.jpg 100w',
     title: 'One',
     content: 'Content one',
     cta: {
@@ -17,8 +16,7 @@ const cells = [
     },
   },
   {
-    imgUrl:
-      'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+    imgSrcset: 'kid-and-pig.jpg 100w',
     title: 'Two',
     content: 'Content two',
     cta: {
@@ -27,8 +25,7 @@ const cells = [
     },
   },
   {
-    imgUrl:
-      'https://healthy-kids.com.au/wp-content/uploads/2013/10/familydinner1.jpg',
+    imgSrcset: 'copertina.jpg 100w',
     title: 'One',
     content: 'Content three',
   },

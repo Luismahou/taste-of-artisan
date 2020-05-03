@@ -11,7 +11,7 @@ const MENU_ITEMS = [
 storiesOf('Header', module).add('interactive', () => {
   return (
     <>
-      <Header menuItems={MENU_ITEMS} />
+      <Header logoSrc="/logo.png" menuItems={MENU_ITEMS} />
       <div className="h-screen bg-muddy-waters" />
     </>
   );
