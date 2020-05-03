@@ -20,7 +20,7 @@
     }
   },
   "dependencies": {
-    "date-fns": "^2.11.1",
+    "date-fns": "^2.12.0",
     "framer-motion": "^1.10.3",
     "lodash": "^4.17.15",
     "next": "^9.3.4",
@@ -30,7 +30,7 @@
     "showdown": "^1.9.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.9.6",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-angular": "^8.3.4",
     "@storybook/addon-actions": "^5.3.18",
@@ -39,14 +39,14 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
     "@types/imagemin": "^7.0.0",
-    "@types/lodash": "^4.14.149",
+    "@types/lodash": "^4.14.150",
     "@types/node": "^12.12.32",
-    "@types/react": "^16.9.32",
+    "@types/react": "^16.9.34",
     "@types/sharp": "^0.24.0",
     "@types/showdown": "^1.9.3",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
-    "husky": "^4.2.3",
+    "husky": "^4.2.5",
     "imagemin": "^7.0.1",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
@@ -54,9 +54,9 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1",
-    "raw-loader": "^4.0.0",
+    "raw-loader": "^4.0.1",
     "sharp": "^0.25.2",
-    "tailwindcss": "^1.1.4",
+    "tailwindcss": "^1.4.4",
     "typescript": "^3.8.3"
   }
 }
