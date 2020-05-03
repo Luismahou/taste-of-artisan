@@ -42,3 +42,5 @@ fields:
     maxSize: 1
   label: Logo
   default: "/logo-dark.png"
+pages:
+- content/footer.json
