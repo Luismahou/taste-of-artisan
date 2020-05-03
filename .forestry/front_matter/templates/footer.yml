@@ -4,7 +4,7 @@ hide_body: true
 fields:
 - type: field_group
   name: firstColumnData
-  label: firstColumnData
+  label: First column
   fields:
   - type: text
     name: title
@@ -21,7 +21,7 @@ fields:
       label: href
 - type: field_group
   name: secondColumnData
-  label: secondColumnData
+  label: Second column
   fields:
   - type: text
     name: title
@@ -36,3 +36,9 @@ fields:
     - type: text
       name: href
       label: href
+- name: logoSrc
+  type: file
+  config:
+    maxSize: 1
+  label: Logo
+  default: "/logo-dark.png"
