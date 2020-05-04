@@ -1,3 +1,21 @@
 {
-  "products": []
+  "products": [
+    {
+      "name": "Spanish chorizos",
+      "description": "Don't use them in a paella",
+      "pictures": [
+        "/spanish-chorizo-with-thyme.jpeg"
+      ],
+      "ingredients": "Pork (97%), paprika, paprika, paprika, did I say paprika?"
+    },
+    {
+      "description": "You would make your \"nonna\" happy",
+      "pictures": [
+        "/italian-sausage-in-a-roll.jpeg",
+        "/italian-sausage-in-a-spiral.jpeg"
+      ],
+      "ingredients": "Pork (90%), paprika, salt, peeper and a lot of love",
+      "name": "Italian sausages"
+    }
+  ]
 }

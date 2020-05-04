@@ -37,3 +37,5 @@ fields:
     max: 
     labelField: name
   label: Products
+pages:
+- content/products.json
