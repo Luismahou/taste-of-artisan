@@ -1,9 +1,44 @@
-import { Post } from '../../src/pages/post';
+import React from 'react';
 import { Converter } from 'showdown';
 import { parseISO, formatDistance } from 'date-fns';
-import global from '../../content/global.json';
-import header from '../../content/header.json';
-import footer from '../../content/footer.json';
+import global from '../../../content/global.json';
+import header from '../../../content/header.json';
+import footer from '../../../content/footer.json';
+import { Head } from '../../components/head/head';
+import { Header } from '../../components/header/header';
+import { Footer } from '../../components/footer/footer';
+
+type PostProps = {
+  global: {
+    title: string;
+  };
+  header: React.ComponentProps<typeof Header>;
+  footer: React.ComponentProps<typeof Footer>;
+  metadata: {
+    title: string;
+    subtitle: string;
+    publishedDate: string;
+  };
+  md: string;
+};
+
+const Post = ({ global, header, footer, metadata, md }: PostProps) => {
+  return (
+    <div>
+      <Head title={global.title} />
+      <Header {...header} />
+      <section className="py-8 sm:py-16 blog-container">
+        <h1 className="text-2xl sm:text-4xl">{metadata.title}</h1>
+        <h2 className="text-xl sm:text-2xl">{metadata.subtitle}</h2>
+        <span className="text-xs sm:text-sm">
+          Published {metadata.publishedDate}
+        </span>
+        <div dangerouslySetInnerHTML={{ __html: md }} />
+      </section>
+      <Footer {...footer} />
+    </div>
+  );
+};
 
 export default Post;
 
@@ -31,7 +66,7 @@ export async function getStaticProps({
   params: { post_name: string };
 }) {
   const mdContent: string = (
-    await import(`../../content/posts/${params.post_name}.md`)
+    await import(`../../../content/posts/${params.post_name}.md`)
   ).default;
 
   const classMap = {
