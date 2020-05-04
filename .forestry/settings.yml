@@ -6,6 +6,16 @@ webhook_url:
 sections:
 - type: heading
   label: Content
+- type: document
+  path: content/products.json
+  label: Products
+  match: "**/*"
+- type: document
+  path: content/header.json
+  label: Header
+- type: document
+  path: content/footer.json
+  label: Footer
 - type: directory
   path: content/posts
   label: Blog posts
@@ -14,12 +24,6 @@ sections:
   new_doc_ext: md
   templates:
   - blog-post
-- type: document
-  path: content/header.json
-  label: Header
-- type: document
-  path: content/footer.json
-  label: Footer
 upload_dir: uploads
 public_path: ''
 front_matter_path: ''
