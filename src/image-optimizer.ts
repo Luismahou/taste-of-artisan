@@ -1,6 +1,7 @@
 import sharp from 'sharp';
 import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
+import fs from 'fs';
 
 type OutputOptions = {
   width: number;
@@ -13,6 +14,10 @@ export async function optimizeImage<O extends Output>(
   nameWithSlash: string,
   output: O,
 ): Promise<{ src: string; srcset: string }> {
+  if (!fs.existsSync('public/uploads')) {
+    fs.mkdirSync('public/uploads');
+  }
+
   const nameWithExt = nameWithSlash.substring(1);
   const dotIndex = nameWithExt.lastIndexOf('.');
   const name = nameWithExt.substring(0, dotIndex);
