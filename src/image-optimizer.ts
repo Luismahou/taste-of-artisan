@@ -34,7 +34,7 @@ export async function optimizeImage<O extends Output>(
   const results: string[] = [];
   let src = '';
   for (const key in output) {
-    const inputFile = `uploads/${nameWithExt}`;
+    const inputFile = `content/uploads/${nameWithExt}`;
     const outputFile = `public/uploads/${name}.${key}.${ext}`;
     await processor(inputFile, outputFile, output[key]);
     src = `/uploads/${name}.${key}.${ext}`;
