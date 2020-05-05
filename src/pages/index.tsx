@@ -1,12 +1,12 @@
 import React from 'react';
 import global from '../../content/global.json';
-import header from '../../content/header.json';
-import footer from '../../content/footer.json';
 import { optimizeImage } from '../image-optimizer';
 import { Head } from '../components/head/head';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
 import { Section } from '../components/sections/section';
+import { loadHeader } from '../content-loaders/header-loader';
+import { loadFooter } from '../content-loaders/footer-loader';
 
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
 type IndexProps = {
@@ -37,9 +37,6 @@ const Index = ({ global, header, sectionDatas, footer }: IndexProps) => (
 export default Index;
 
 export async function getStaticProps() {
-  const { src: defaultLogoSrc } = await optimizeImage(header.logo, {
-    default: { width: 200 },
-  });
   const { srcset: rolledSausagesSrcset } = await optimizeImage(
     '/rolled-sausages.jpg',
     {
@@ -48,21 +45,12 @@ export async function getStaticProps() {
       large: { width: 1200 },
     },
   );
-  const { src: defaultDarkLogoSrc } = await optimizeImage(footer.logoSrc, {
-    default: { width: 200 },
-  });
 
   return {
     props: {
       global,
-      header: {
-        ...header,
-        logoSrc: defaultLogoSrc,
-      },
-      footer: {
-        ...footer,
-        logoSrc: defaultDarkLogoSrc,
-      },
+      header: await loadHeader(),
+      footer: await loadFooter(),
       sectionDatas: [
         {
           kind: 'hero',

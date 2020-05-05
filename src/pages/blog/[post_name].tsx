@@ -2,11 +2,11 @@ import React from 'react';
 import { Converter } from 'showdown';
 import { parseISO, formatDistance } from 'date-fns';
 import global from '../../../content/global.json';
-import header from '../../../content/header.json';
-import footer from '../../../content/footer.json';
 import { Head } from '../../components/head/head';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
+import { loadHeader } from '../../content-loaders/header-loader';
+import { loadFooter } from '../../content-loaders/footer-loader';
 
 type PostProps = {
   global: {
@@ -93,8 +93,8 @@ export async function getStaticProps({
   return {
     props: {
       global,
-      header,
-      footer,
+      header: await loadHeader(),
+      footer: await loadFooter(),
       md,
       metadata: {
         ...otherMetadata,
