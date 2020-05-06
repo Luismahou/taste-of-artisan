@@ -5,8 +5,7 @@ import global from '../../../content/global.json';
 import { Head } from '../../components/head/head';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
-import { loadHeader } from '../../content-loaders/header-loader';
-import { loadFooter } from '../../content-loaders/footer-loader';
+import { loadHeader, loadFooter } from '../../content-loaders';
 
 type PostProps = {
   global: {
