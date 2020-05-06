@@ -2,6 +2,8 @@ import sharp from 'sharp';
 import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
 
 type OutputOptions = {
   width: number;
@@ -37,7 +39,8 @@ export async function optimizeImage<O extends Output>(
     const inputFile = `content/uploads/${nameWithExt}`;
     const outputFile = `public/uploads/${name}.${key}.${ext}`;
     await processor(inputFile, outputFile, output[key]);
-    src = `/uploads/${name}.${key}.${ext}`;
+    const hashedFilename = hashFile(outputFile);
+    src = `/uploads/${hashedFilename}`;
     results.push(
       // Most screens have a pixel density over 1. It's normally enough to
       // download first a low quality image, specially on mobile devices.
@@ -49,6 +52,19 @@ export async function optimizeImage<O extends Output>(
     src,
     srcset: results.join(', '),
   };
+}
+
+function hashFile(src: string) {
+  const hash = crypto.createHash('sha256');
+  const data = fs.readFileSync(src);
+  hash.update(data);
+
+  const pathParts = path.parse(src);
+  const hashedFilename = `${pathParts.name}-${hash
+    .digest('hex')
+    .substring(0, 8)}${pathParts.ext}`;
+  fs.renameSync(src, `${path.join(pathParts.dir, hashedFilename)}`);
+  return hashedFilename;
 }
 
 async function processPng(
