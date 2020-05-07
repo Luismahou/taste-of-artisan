@@ -33,12 +33,10 @@ export async function loadHero(heroData: HeroData) {
     large: { width: 1200 },
   });
 
-  const r = {
+  return {
     ...other,
     imgSrcset: srcset,
   };
-  console.log('hero data: ', r);
-  return r;
 }
 
 export function loadFAQs() {
