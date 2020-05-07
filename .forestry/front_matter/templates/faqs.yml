@@ -28,3 +28,5 @@ fields:
     max: 
     labelField: question
   label: FAQs
+pages:
+- content/faqs.json
