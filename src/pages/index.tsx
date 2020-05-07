@@ -4,7 +4,7 @@ import { Head } from '../components/head/head';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
 import { Section } from '../components/sections/section';
-import { loadHeader, loadFooter, loadHero } from '../content-loaders';
+import { loadHeader, loadFooter, loadHero, loadFAQs } from '../content-loaders';
 
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
 type IndexProps = {
@@ -82,26 +82,7 @@ export async function getStaticProps() {
           subtitle:
             'Taste of Artisan was born thanks to the experience and Italian traditions handed down for generations in the production of artisan smallgoods',
         },
-        {
-          kind: 'faqs',
-          faqs: [
-            {
-              question: 'Is delivery free?',
-              answer:
-                'We deliver our products free of charge to the following suburbs: Sydney metro, Mascot, Surry Hills, Redfern, Bondi, Bondi Junction, ...',
-            },
-            {
-              question: 'For how long I can keep your goods in my fridge?',
-              answer:
-                'All our products are freshly made in our premises with neither preservatives nor nasties. Because of that, they expire quicker than the cheaper products you can find in supermarkets. They last from 5 to 7 days in the fridge.',
-            },
-            {
-              question: 'Can I freeze your goods?',
-              answer:
-                "Yes, you can! And it's actually recommended if you're not planning to eat them straight away. In the freezer they will last up to 6 months.",
-            },
-          ],
-        },
+        loadFAQs(),
       ],
     },
   };

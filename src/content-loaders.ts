@@ -2,6 +2,7 @@ import { optimizeImage } from './image-optimizer';
 import { HeroSectionData } from './components/sections/hero-section';
 import header from '../content/header.json';
 import footer from '../content/footer.json';
+import faqs from '../content/faqs.json';
 
 export async function loadHeader() {
   const { src: defaultLogoSrc } = await optimizeImage(header.logo, {
@@ -38,4 +39,11 @@ export async function loadHero(heroData: HeroData) {
   };
   console.log('hero data: ', r);
   return r;
+}
+
+export function loadFAQs() {
+  return {
+    kind: 'faqs',
+    faqs: faqs.faqs,
+  };
 }
