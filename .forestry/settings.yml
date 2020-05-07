@@ -7,14 +7,18 @@ sections:
 - type: heading
   label: Content
 - type: document
-  path: content/products.json
-  label: Products
-- type: document
   path: content/header.json
   label: Header
 - type: document
   path: content/footer.json
   label: Footer
+- type: document
+  path: content/products.json
+  label: Products
+- type: document
+  path: content/faqs.json
+  label: FAQs
+  match: "**/*"
 - type: directory
   path: content/posts
   label: Blog posts
