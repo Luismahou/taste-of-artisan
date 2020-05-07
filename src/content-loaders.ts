@@ -1,4 +1,5 @@
 import { optimizeImage } from './image-optimizer';
+import { HeroSectionData } from './components/sections/hero-section';
 import header from '../content/header.json';
 import footer from '../content/footer.json';
 
@@ -20,4 +21,21 @@ export async function loadFooter() {
     ...footer,
     logoSrc: defaultDarkLogoSrc,
   };
+}
+
+type HeroData = Omit<HeroSectionData, 'imgSrcset'> & { imgSrc: string };
+export async function loadHero(heroData: HeroData) {
+  const { imgSrc, ...other } = heroData;
+  const { srcset } = await optimizeImage(heroData.imgSrc, {
+    small: { width: 400 },
+    medium: { width: 800 },
+    large: { width: 1200 },
+  });
+
+  const r = {
+    ...other,
+    imgSrcset: srcset,
+  };
+  console.log('hero data: ', r);
+  return r;
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 import global from '../../content/global.json';
-import { optimizeImage } from '../image-optimizer';
 import { Head } from '../components/head/head';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
 import { Section } from '../components/sections/section';
-import { loadHeader, loadFooter } from '../content-loaders';
+import { loadHeader, loadFooter, loadHero } from '../content-loaders';
 
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
 type IndexProps = {
@@ -36,27 +35,18 @@ const Index = ({ global, header, sectionDatas, footer }: IndexProps) => (
 export default Index;
 
 export async function getStaticProps() {
-  const { srcset: rolledSausagesSrcset } = await optimizeImage(
-    '/rolled-sausages.jpg',
-    {
-      small: { width: 400 },
-      medium: { width: 800 },
-      large: { width: 1200 },
-    },
-  );
-
   return {
     props: {
       global,
       header: await loadHeader(),
       footer: await loadFooter(),
       sectionDatas: [
-        {
+        await loadHero({
           kind: 'hero',
-          imgSrcset: rolledSausagesSrcset,
+          imgSrc: '/rolled-sausages.jpg',
           title: 'Ancient traditions by artisans of taste',
           subtitle: '',
-        },
+        }),
         {
           kind: 'title',
           title: 'Real food with 0 nasties',
