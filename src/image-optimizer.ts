@@ -12,10 +12,52 @@ type Output = {
   [key: string]: OutputOptions;
 };
 
+class Locker {
+  private readonly lockedFiles: Set<string> = new Set();
+  private readonly queue: Map<string, (() => void)[]> = new Map();
+
+  acquire(filename: string): Promise<() => void> {
+    if (this.lockedFiles.has(filename)) {
+      const promise = new Promise<() => void>((resolve) => {
+        // The lock might have been released during the creation of the promise
+        if (!this.lockedFiles.has(filename)) {
+          resolve(() => this.release(filename));
+        } else {
+          let pendingCallbacks = this.queue.get(filename);
+          if (!pendingCallbacks) {
+            pendingCallbacks = [];
+            this.queue.set(filename, pendingCallbacks);
+          }
+          pendingCallbacks.push(resolve);
+        }
+      });
+      return promise;
+    } else {
+      this.lockedFiles.add(filename);
+      return Promise.resolve(() => this.release(filename));
+    }
+  }
+
+  private release(filename: string) {
+    const pendingCallbacks = this.queue.get(filename);
+    const callback = pendingCallbacks && pendingCallbacks.pop();
+    if (callback) {
+      callback!();
+    } else {
+      this.lockedFiles.delete(filename);
+    }
+  }
+}
+
+const locker = new Locker();
+
 export async function optimizeImage<O extends Output>(
   nameWithSlash: string,
   output: O,
 ): Promise<{ src: string; srcset: string }> {
+  // Ensure we're not optimizing the same image at the same time
+  const releaseLock = await locker.acquire(nameWithSlash);
+
   if (!fs.existsSync('public/uploads')) {
     fs.mkdirSync('public/uploads');
   }
@@ -47,6 +89,8 @@ export async function optimizeImage<O extends Output>(
       `${src} ${output[key].width * 1.5}w`,
     );
   }
+
+  releaseLock();
 
   return {
     src,
