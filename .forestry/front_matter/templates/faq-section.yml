@@ -1,4 +1,11 @@
 ---
 label: FAQ section
 hide_body: true
-fields: []
+fields:
+- name: kind
+  type: text
+  config:
+    required: true
+  hidden: true
+  label: Kind
+  default: faq
