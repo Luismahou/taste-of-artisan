@@ -1,4 +1,21 @@
 ---
 label: Title section
 hide_body: true
-fields: []
+fields:
+- name: kind
+  type: text
+  config:
+    required: true
+  hidden: true
+  label: Kind
+  default: title
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: subtitle
+  type: text
+  config:
+    required: false
+  label: Subtitle
