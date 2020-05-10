@@ -10,7 +10,8 @@ fields:
 - name: sections
   type: blocks
   label: Sections
-  template_types: []
+  template_types:
+  - hero-section
   config:
     min: '1'
     max: 
