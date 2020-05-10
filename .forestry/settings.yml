@@ -23,7 +23,7 @@ sections:
   label: Pages
   create: documents
   match: "**/*.json"
-  new_doc_ext: ".json"
+  new_doc_ext: json
   templates:
   - page
 - type: directory
