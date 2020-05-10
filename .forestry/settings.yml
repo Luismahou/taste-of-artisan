@@ -19,6 +19,14 @@ sections:
   path: content/faqs.json
   label: FAQs
 - type: directory
+  path: content/pages
+  label: Pages
+  create: documents
+  match: "**/*.json"
+  new_doc_ext: ".json"
+  templates:
+  - page
+- type: directory
   path: content/posts
   label: Blog posts
   create: all
