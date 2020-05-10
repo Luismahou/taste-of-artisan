@@ -14,15 +14,6 @@
       "subtitle": "We follow strict processing and hygiene protocols that allow us to create sensational products with the total absence of chemical preservatives, sugars and allergens such as phosphates and gluten, free of glues and artificial proteins. In this Taste of Artisan is unique."
     },
     {
-      "template": "background-separator-section",
-      "kind": "background-separator",
-      "image": "/meat-strip.jpg"
-    },
-    {
-      "template": "faq-section",
-      "kind": "faq"
-    },
-    {
       "template": "side-by-side-section",
       "side": [
         {
@@ -48,6 +39,15 @@
           "content": ""
         }
       ]
+    },
+    {
+      "template": "background-separator-section",
+      "kind": "background-separator",
+      "image": "/meat-strip.jpg"
+    },
+    {
+      "template": "faq-section",
+      "kind": "faq"
     }
   ]
 }
