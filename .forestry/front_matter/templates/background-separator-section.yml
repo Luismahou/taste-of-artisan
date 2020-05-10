@@ -1,4 +1,16 @@
 ---
 label: Background separator section
 hide_body: true
-fields: []
+fields:
+- name: kind
+  type: text
+  config:
+    required: true
+  hidden: true
+  label: Kind
+  default: background-separator
+- name: image
+  type: file
+  config:
+    maxSize: 20
+  label: Image
