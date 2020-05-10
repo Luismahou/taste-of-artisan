@@ -21,11 +21,6 @@
     {
       "template": "faq-section",
       "kind": "faq"
-    },
-    {
-      "template": "side-by-side-section",
-      "image": "/kid-and-pig.jpg",
-      "title": "Like you, they deserve to eat healthy & tasty"
     }
   ]
 }
