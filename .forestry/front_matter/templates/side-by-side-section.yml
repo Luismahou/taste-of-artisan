@@ -2,22 +2,30 @@
 label: Side by side section
 hide_body: true
 fields:
-- name: image
-  type: file
+- name: side
+  type: field_group_list
+  fields:
+  - name: image
+    type: file
+    config:
+      maxSize: 20
+    label: Image
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+  - name: content
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Content
   config:
-    maxSize: 20
-  label: Image
-- name: title
-  type: text
-  config:
-    required: true
-  label: Title
-- name: content
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Content
+    min: 
+    max: 
+    labelField: title
+  label: Side
