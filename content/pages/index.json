@@ -3,30 +3,20 @@
   "sections": [
     {
       "template": "hero-section",
-      "kind": "hero",
       "backgroundImage": "/rolled-sausages.jpg",
       "title": "Ancient traditions by artisans of taste"
     },
     {
       "template": "title-section",
-      "kind": "title",
       "title": "Real food with 0 nasties",
       "subtitle": "We follow strict processing and hygiene protocols that allow us to create sensational products with the total absence of chemical preservatives, sugars and allergens such as phosphates and gluten, free of glues and artificial proteins. In this Taste of Artisan is unique."
     },
     {
+      "template": "background-separator-section",
+      "image": "/meat-strip.jpg"
+    },
+    {
       "template": "side-by-side-section",
-      "side": [
-        {
-          "image": "/copertina.jpg",
-          "title": "You are what you eat, applies to animals too",
-          "content": "We care about our health and that of our children, so we dedicate our energies with passion and dedication in the development and creation of nutritious and tasty healthy food products for the whole family."
-        },
-        {
-          "image": "/kid-and-pig.jpg",
-          "title": "Like you, they deserve to eat healthy & tasty",
-          "content": ""
-        }
-      ],
       "sides": [
         {
           "image": "/copertina.jpg",
@@ -39,11 +29,6 @@
           "content": ""
         }
       ]
-    },
-    {
-      "template": "background-separator-section",
-      "kind": "background-separator",
-      "image": "/meat-strip.jpg"
     },
     {
       "template": "faq-section",
