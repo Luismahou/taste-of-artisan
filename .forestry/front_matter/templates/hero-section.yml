@@ -1,14 +1,8 @@
 ---
 label: Hero section
 hide_body: true
+display_field: title
 fields:
-- name: kind
-  type: text
-  config:
-    required: true
-  hidden: true
-  label: Kind
-  default: hero
 - name: backgroundImage
   type: file
   config:
