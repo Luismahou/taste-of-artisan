@@ -2,7 +2,7 @@
 label: Side by side section
 hide_body: true
 fields:
-- name: side
+- name: sides
   type: field_group_list
   fields:
   - name: image
@@ -28,4 +28,4 @@ fields:
     min: 
     max: 
     labelField: title
-  label: Side
+  label: Sides
