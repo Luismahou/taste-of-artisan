@@ -1,1 +1,11 @@
-{}
+{
+  "url": "/",
+  "sections": [
+    {
+      "template": "hero-section",
+      "kind": "hero",
+      "backgroundImage": "/rolled-sausages.jpg",
+      "title": "Ancient traditions by artisans of taste"
+    }
+  ]
+}
