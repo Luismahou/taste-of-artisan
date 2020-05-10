@@ -6,6 +6,12 @@
       "kind": "hero",
       "backgroundImage": "/rolled-sausages.jpg",
       "title": "Ancient traditions by artisans of taste"
+    },
+    {
+      "template": "title-section",
+      "kind": "title",
+      "title": "Real food with 0 nasties",
+      "subtitle": "We follow strict processing and hygiene protocols that allow us to create sensational products with the total absence of chemical preservatives, sugars and allergens such as phosphates and gluten, free of glues and artificial proteins. In this Taste of Artisan is unique."
     }
   ]
 }
