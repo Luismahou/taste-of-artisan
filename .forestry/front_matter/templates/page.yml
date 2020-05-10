@@ -2,6 +2,11 @@
 label: Page
 hide_body: true
 fields:
+- name: url
+  type: text
+  config:
+    required: false
+  label: Url
 - name: sections
   type: blocks
   label: Sections
