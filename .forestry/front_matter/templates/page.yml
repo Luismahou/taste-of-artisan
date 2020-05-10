@@ -12,6 +12,9 @@ fields:
   label: Sections
   template_types:
   - hero-section
+  - background-separator-section
+  - side-by-side-section
+  - title-section
   config:
     min: '1'
     max: 
