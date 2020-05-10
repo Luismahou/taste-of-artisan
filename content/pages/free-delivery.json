@@ -1,0 +1,11 @@
+{
+  "url": "/free-delivery",
+  "sections": [
+    {
+      "template": "title-section",
+      "kind": "title",
+      "title": "Free delivery",
+      "subtitle": "As I said free delivery"
+    }
+  ]
+}
