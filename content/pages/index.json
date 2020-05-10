@@ -17,6 +17,10 @@
       "template": "background-separator-section",
       "kind": "background-separator",
       "image": "/meat-strip.jpg"
+    },
+    {
+      "template": "faq-section",
+      "kind": "faq"
     }
   ]
 }
