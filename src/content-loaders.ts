@@ -24,10 +24,10 @@ export async function loadFooter() {
   };
 }
 
-type HeroData = Omit<HeroSectionData, 'imgSrcset'> & { imgSrc: string };
+type HeroData = Omit<HeroSectionData, 'imgSrcset'>;
 export async function loadHero(heroData: HeroData) {
   const { imgSrc, ...other } = heroData;
-  const { srcset } = await optimizeImage(heroData.imgSrc, {
+  const { src, srcset } = await optimizeImage(heroData.imgSrc, {
     small: { width: 400 },
     medium: { width: 800 },
     large: { width: 1200 },
@@ -35,6 +35,7 @@ export async function loadHero(heroData: HeroData) {
 
   return {
     ...other,
+    imgSrc: src,
     imgSrcset: srcset,
   };
 }

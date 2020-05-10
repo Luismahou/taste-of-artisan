@@ -7,12 +7,14 @@ export type HeroSectionData = {
 } & HeroSectionProps;
 
 type HeroSectionProps = {
+  imgSrc: string;
   imgSrcset: string;
   title: string;
   subtitle: string;
 };
 
 export const HeroSection = ({
+  imgSrc,
   imgSrcset,
   title,
   subtitle,
@@ -20,7 +22,7 @@ export const HeroSection = ({
   return (
     <section>
       <div className="relative w-full hero-bg">
-        <BgImg imgSrcset={imgSrcset} />
+        <BgImg imgSrc={imgSrc} imgSrcset={imgSrcset} />
         <div className="absolute inset-0 flex items-center justify-center sm:justify-start sm:items-end">
           <div className="container relative">
             <div className="relative sm:pb-16">
