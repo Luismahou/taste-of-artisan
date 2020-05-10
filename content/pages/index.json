@@ -29,6 +29,11 @@
           "image": "/copertina.jpg",
           "title": "You are what you eat, applies to animals too",
           "content": "We care about our health and that of our children, so we dedicate our energies with passion and dedication in the development and creation of nutritious and tasty healthy food products for the whole family."
+        },
+        {
+          "image": "/kid-and-pig.jpg",
+          "title": "Like you, they deserve to eat healthy & tasty",
+          "content": ""
         }
       ]
     }
