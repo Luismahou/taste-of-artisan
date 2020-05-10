@@ -1,4 +1,26 @@
 ---
 label: Hero section
 hide_body: true
-fields: []
+fields:
+- name: kind
+  type: text
+  config:
+    required: true
+  hidden: true
+  label: Kind
+  default: hero
+- name: backgroundImage
+  type: file
+  config:
+    maxSize: 20
+  label: Background image
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: subtitle
+  type: text
+  config:
+    required: false
+  label: Subtitle
