@@ -21,6 +21,16 @@
     {
       "template": "faq-section",
       "kind": "faq"
+    },
+    {
+      "template": "side-by-side-section",
+      "side": [
+        {
+          "image": "/copertina.jpg",
+          "title": "You are what you eat, applies to animals too",
+          "content": "We care about our health and that of our children, so we dedicate our energies with passion and dedication in the development and creation of nutritious and tasty healthy food products for the whole family."
+        }
+      ]
     }
   ]
 }
