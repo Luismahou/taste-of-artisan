@@ -15,6 +15,7 @@ fields:
   - background-separator-section
   - side-by-side-section
   - title-section
+  - faq-section
   config:
     min: '1'
     max: 
