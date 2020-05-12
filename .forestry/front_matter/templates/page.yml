@@ -2,22 +2,17 @@
 label: Page
 hide_body: true
 fields:
-- name: url
-  type: text
-  config:
-    required: false
-  label: Url
-- name: sections
-  type: blocks
-  label: Sections
-  template_types:
-  - hero-section
-  - background-separator-section
-  - side-by-side-section
-  - title-section
-  - faq-section
-  config:
-    min: '1'
-    max: 
+  - name: sections
+    type: blocks
+    label: Sections
+    template_types:
+      - hero-section
+      - background-separator-section
+      - side-by-side-section
+      - title-section
+      - faq-section
+    config:
+      min: '1'
+      max:
 pages:
-- content/pages/free-delivery.json
+  - content/pages/free-delivery.json
