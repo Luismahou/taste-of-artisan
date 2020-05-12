@@ -5,8 +5,9 @@ export default {
   title: 'Side by side section',
 };
 
-const cells = [
+const sides = [
   {
+    imgSrc: 'copertina.jpg',
     imgSrcset: 'copertina.jpg 100w',
     title: 'One',
     content: 'Content one',
@@ -16,6 +17,7 @@ const cells = [
     },
   },
   {
+    imgSrc: 'kid-and-pig.jpg',
     imgSrcset: 'kid-and-pig.jpg 100w',
     title: 'Two',
     content: 'Content two',
@@ -25,10 +27,11 @@ const cells = [
     },
   },
   {
+    imgSrc: 'copertina.jpg',
     imgSrcset: 'copertina.jpg 100w',
     title: 'One',
     content: 'Content three',
   },
 ];
 
-export const sideBySide = () => <SideBySideSection cells={cells} />;
+export const sideBySide = () => <SideBySideSection sides={sides} />;

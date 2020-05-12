@@ -5,7 +5,8 @@ export type SideBySideSectionData = {
   kind: 'side-by-side';
 } & SideBySideSectionProps;
 
-type Cell = {
+export type Side = {
+  imgSrc: string;
   imgSrcset: string;
   title: string;
   content: string;
@@ -16,20 +17,20 @@ type Cell = {
 };
 
 type SideBySideSectionProps = {
-  cells: readonly Cell[];
+  sides: readonly Side[];
 };
 
-export const SideBySideSection = ({ cells }: SideBySideSectionProps) => {
+export const SideBySideSection = ({ sides }: SideBySideSectionProps) => {
   return (
     <section className="container py-8 side-by-side">
-      {cells.map(({ imgSrcset, ...textProps }, index) => {
+      {sides.map(({ imgSrc, imgSrcset, ...textProps }, index) => {
         const isOdd = index % 2 !== 0;
         return (
           <div
             key={index}
             className={`side-by-side-pair ${isOdd ? 'reversed' : ''}`}
           >
-            <SideImg imgSrcset={imgSrcset} />
+            <SideImg imgSrc={imgSrc} imgSrcset={imgSrcset} />
             <SideText {...textProps} />
           </div>
         );
@@ -38,21 +39,22 @@ export const SideBySideSection = ({ cells }: SideBySideSectionProps) => {
   );
 };
 
-type SideImgProps = {} & Pick<Cell, 'imgSrcset'>;
+type SideImgProps = {} & Pick<Side, 'imgSrc' | 'imgSrcset'>;
 
-const SideImg = ({ imgSrcset }: SideImgProps) => {
+const SideImg = ({ imgSrc, imgSrcset }: SideImgProps) => {
   return (
     <>
       <svg className="side-by-side-img" viewBox="0 0 1 .75" />
       <img
         className="object-cover object-center h-full side-by-side-img"
+        src={imgSrc}
         srcSet={imgSrcset}
       />
     </>
   );
 };
 
-type SideTextProps = {} & Pick<Cell, 'title' | 'content' | 'cta'>;
+type SideTextProps = {} & Pick<Side, 'title' | 'content' | 'cta'>;
 const SideText = ({ title, content, cta }: SideTextProps) => (
   <div className={'side-by-side-text flex flex-col justify-center'}>
     <h2 className="text-2xl font-bold sm:text-3xl">{title}</h2>

@@ -6,5 +6,8 @@ export default {
 };
 
 export const backgroundSeparatorSection = () => (
-  <BackgroundSeparatorSection imgSrcset="meat-strip.jpg 100w" />
+  <BackgroundSeparatorSection
+    imgSrc="meat-strip.jpg"
+    imgSrcset="meat-strip.jpg 100w"
+  />
 );
