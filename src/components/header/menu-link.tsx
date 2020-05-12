@@ -12,7 +12,7 @@ export const MenuLink = ({ label, href, theme }: MenuLinkProps) => {
   const onMouseOut = () => setHovering(false);
 
   return (
-    <Link href={href}>
+    <Link href="/[page]" as={href}>
       <a
         className={`
     relative text-lg font-medium py-2 uppercase cursor-pointer

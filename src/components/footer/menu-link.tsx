@@ -6,8 +6,9 @@ type MenuLinkProps = {
   href: string;
 };
 export const MenuLink = ({ label, href }: MenuLinkProps) => {
+  const finalHref = href.startsWith('/blog/') ? '/blog/[post_name]' : '/[page]';
   return (
-    <Link href={href}>
+    <Link as={href} href={finalHref}>
       <a className="relative py-2 font-medium text-gray-300 cursor-pointer text-normal hover:text-white active:text-gray-400">
         {label}
       </a>
