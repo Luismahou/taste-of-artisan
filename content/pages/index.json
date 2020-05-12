@@ -1,5 +1,4 @@
 {
-  "url": "/",
   "sections": [
     {
       "template": "hero-section",
@@ -31,8 +30,7 @@
       ]
     },
     {
-      "template": "faq-section",
-      "kind": "faq"
+      "template": "faq-section"
     }
   ]
 }
