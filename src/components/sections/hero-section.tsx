@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BgImg } from '../base/bg-img';
+import { BgImg } from 'components/base/bg-img';
 
 export type HeroSectionData = {
   kind: 'hero';

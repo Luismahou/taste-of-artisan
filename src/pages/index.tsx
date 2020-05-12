@@ -1,6 +1,6 @@
-import global from '../../content/global.json';
+import global from 'content/global.json';
 import Page from './[page]';
-import { loadHomePage, loadHeader, loadFooter } from '../content-loaders';
+import { loadHomePage, loadHeader, loadFooter } from 'content-loaders';
 
 export default Page;
 

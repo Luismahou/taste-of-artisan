@@ -1,11 +1,11 @@
 import React from 'react';
 import fs from 'fs';
-import global from '../../content/global.json';
-import { Head } from '../components/head/head';
-import { Header } from '../components/header/header';
-import { Footer } from '../components/footer/footer';
-import { Section } from '../components/sections/section';
-import { loadHeader, loadFooter, loadSections } from '../content-loaders';
+import global from 'content/global.json';
+import { Head } from 'components/head/head';
+import { Header } from 'components/header/header';
+import { Footer } from 'components/footer/footer';
+import { Section } from 'components/sections/section';
+import { loadHeader, loadFooter, loadSections } from 'content-loaders';
 
 type SectionData = React.ComponentProps<typeof Section>['sectionData'];
 type PageProps = {

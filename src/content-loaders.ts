@@ -1,9 +1,9 @@
 import { optimizeImage } from './image-optimizer';
 import { HeroSectionData } from './components/sections/hero-section';
-import header from '../content/header.json';
-import footer from '../content/footer.json';
-import faqs from '../content/faqs.json';
-import homePage from '../content/pages/index.json';
+import header from 'content/header.json';
+import footer from 'content/footer.json';
+import faqs from 'content/faqs.json';
+import homePage from 'content/pages/index.json';
 import { TitleSectionData } from './components/sections/title-section';
 import { BackgroundSeparatorSectionData } from './components/sections/background-separator-section';
 import {

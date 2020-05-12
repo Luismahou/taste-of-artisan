@@ -1,6 +1,10 @@
 const path = require('path');
 
 module.exports = ({ config, mode }) => {
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    components: path.resolve(__dirname, '../src/components'),
+  };
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: require.resolve('babel-loader'),

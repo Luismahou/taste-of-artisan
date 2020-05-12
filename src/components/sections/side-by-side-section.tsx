@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton } from '../base/link-button';
+import { LinkButton } from 'components/base/link-button';
 
 export type SideBySideSectionData = {
   kind: 'side-by-side';
