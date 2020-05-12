@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 type MenuLinkProps = {
@@ -6,20 +6,9 @@ type MenuLinkProps = {
   href: string;
 };
 export const MenuLink = ({ label, href }: MenuLinkProps) => {
-  const [hovering, setHovering] = useState(false);
-  const onMouseOver = () => setHovering(true);
-  const onMouseOut = () => setHovering(false);
-
   return (
     <Link href={href}>
-      <a
-        className={`
-relative text-normal font-medium py-2 cursor-pointer
-text-gray-300 hover:text-white active:text-gray-400
-        `}
-        onMouseOver={onMouseOver}
-        onMouseOut={onMouseOut}
-      >
+      <a className="relative py-2 font-medium text-gray-300 cursor-pointer text-normal hover:text-white active:text-gray-400">
         {label}
       </a>
     </Link>
